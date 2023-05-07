@@ -20,14 +20,22 @@ main{
     position: absolute;
     height: 100%;
     width: 100%;
-    /* bottom: -364px; */
-    bottom: 0px;
+    bottom: -364px;
     background: #00243d71;
     backdrop-filter: blur(4px);
+    transition: ease-in-out .5s;
 }
 
 .card:hover .card-body{
     bottom: 0;
     transition: all .5s;
 }
+.btn-morado{
+    background: #00243d;
+    color: white;
+}
+.btn-morado:hover{
+    background: #35083a;
+}
+
 
