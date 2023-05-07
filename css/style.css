@@ -117,12 +117,9 @@ main{
     perspective: 600px;
     display: inline-block;
 }
-body{
-    text-align: center;
-    padding: 50px;
-}
+
 /*controles*/
-#radio-back:checked ~ .scene .cube{
+/* #radio-back:checked ~ .scene .cube{
     transform: rotateY(180deg);
 }
 #radio-left:checked ~ .scene .cube {
@@ -136,7 +133,22 @@ body{
 }  
 #radio-bottom:checked ~ .scene .cube {
     transform: rotateX(90deg); 
-}   
-.separator{
-    padding: 5px;
+}    */
+
+.cube-button {
+    padding: 0;
+    border: none;
 }
+
+.cube-button-img {
+    width: 45px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.cube-gallery {
+    min-height: 380px;
+}
+
+
