@@ -10,6 +10,36 @@ body{
 main{
     flex-grow: 1;
 }
+.card{
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #bf01d3;
+    border-radius: 16px;
+}
+.card-img-top{
+    border-radius: 0;
+}
+.card-body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: -364px;
+    background: linear-gradient(#00243d71, black);
+    backdrop-filter: blur(4px);
+    transition: ease-in-out .5s;
+}
+
+.card:hover .card-body{
+    bottom: 0;
+    transition: all .5s;
+}
+.btn-morado{
+    background: #00243d;
+    color: white;
+}
+.btn-morado:hover{
+    background: #35083a;
+}
 /* Paleta de colores: 
 #0f1214
 #00243d
