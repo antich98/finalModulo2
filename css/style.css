@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+*{
+    font-family: 'Play', sans-serif;
+}
 body{
     min-height: 100vh;
     display: flex;
@@ -6,7 +10,6 @@ body{
 main{
     flex-grow: 1;
 }
-
 .card{
     position: relative;
     overflow: hidden;
@@ -37,5 +40,12 @@ main{
 .btn-morado:hover{
     background: #35083a;
 }
-
-
+/* Paleta de colores: 
+#0f1214
+#00243d
+#00336c
+#003f9c
+#0045c7
+#5e3eea
+#b200ff
+*/
