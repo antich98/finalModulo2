@@ -20,7 +20,7 @@ main{
     position: absolute;
     height: 100%;
     width: 100%;
-    /* bottom: -364px; */
+    bottom: -364px;
     background: linear-gradient(#00243d71, black);
     backdrop-filter: blur(4px);
     transition: ease-in-out .5s;
