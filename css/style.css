@@ -49,3 +49,130 @@ main{
 #5e3eea
 #b200ff
 */
+
+/* Página de detalle de pelicula */
+.cube{
+    --side-length: 200px;
+    --semi-side-length: calc(var(--side-length)/2);
+    width: var(--side-length);
+    height: var(--side-length);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.85s cubic-bezier(0.175,0.885,0.320,1.275);
+    transform: rotateX(-15deg) rotateY(15deg);
+}
+.cube-face{
+    width: inherit;
+    height: inherit;
+    opacity: 1;
+    position: absolute;
+}
+.front{
+    transform: translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.back{
+    transform: rotateY(180deg) translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.left{
+    transform: rotateY(-90deg) translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.right{
+    transform: rotateY(90deg) translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.top{
+    transform: rotateX(90deg) translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.bottom{
+    transform: rotateX(-90deg) translate3d(0,0,var(--semi-side-length));
+    background-image: url(../img/juego1_img6.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.scene{
+    --side-length:200px;
+    width: var(--side-length);
+    height: var(--side-length);
+    margin-top: 50px;
+    perspective: 600px;
+    display: inline-block;
+}
+
+/*controles*/
+/* #radio-back:checked ~ .scene .cube{
+    transform: rotateY(180deg);
+}
+#radio-left:checked ~ .scene .cube {
+    transform: rotateY(90deg); 
+} 
+#radio-right:checked ~ .scene .cube {
+    transform: rotateY(-90deg); 
+}
+#radio-top:checked ~ .scene .cube {
+    transform: rotateX(-90deg); 
+}  
+#radio-bottom:checked ~ .scene .cube {
+    transform: rotateX(90deg); 
+}    */
+
+.cube-button {
+    padding: 0;
+    border: none;
+}
+
+.cube-button-img {
+    width: 45px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.cube-gallery {
+    min-height: 380px;
+}
+
+.rotate-1 {
+    transform: rotateX(-15deg) rotateY(15deg);
+}
+
+.rotate-2 {
+    transform: rotateY(195deg);
+}
+
+.rotate-3 {
+    transform: rotateY(105deg);
+}
+
+.rotate-4 {
+    transform: rotateY(285deg);
+}
+
+.rotate-5 {
+    transform: rotateX(255deg);
+}
+
+.rotate-6 {
+    transform: rotateX(75deg);
+}
+
+
