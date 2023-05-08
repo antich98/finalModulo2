@@ -151,4 +151,28 @@ main{
     min-height: 380px;
 }
 
+.rotate-1 {
+    transform: rotateX(-15deg) rotateY(15deg);
+}
+
+.rotate-2 {
+    transform: rotateY(195deg);
+}
+
+.rotate-3 {
+    transform: rotateY(105deg);
+}
+
+.rotate-4 {
+    transform: rotateY(285deg);
+}
+
+.rotate-5 {
+    transform: rotateX(255deg);
+}
+
+.rotate-6 {
+    transform: rotateX(75deg);
+}
+
 
