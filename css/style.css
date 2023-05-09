@@ -174,3 +174,35 @@ main {
 .rotate-6 {
   transform: rotateX(75deg);
 }
+.fondo {
+  background-color: #b200ff;
+  background-image: linear-gradient(45deg, #b200ff 0%, #0045c7 18%, #0f1214 43%);
+  
+  background-attachment: fixed;
+}
+@media screen and (max-width: 576px) {
+  .gif {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .gif {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .gif {
+    width: 60%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gif {
+    width: 470px;
+    height: 470px;
+  }
+}
