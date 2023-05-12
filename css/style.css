@@ -188,6 +188,9 @@ main {
   height:300px;
   border-radius:150px;
 }
+.displayNone{
+  display: none;
+}
 @media screen and (max-width: 576px) {
   .gif {
     width: 100%;
