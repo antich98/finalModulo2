@@ -165,4 +165,24 @@ class VideoJuego {
       this.#imagen = imagen;
     }
 
+    toJson(){
+        return{
+            codigo: this.codigo,
+            titulo: this.titulo,
+            precio: this.precio,
+            desarrollador: this.desarrollador,
+            categoria: this.categoria,
+            plataforma: this.plataforma,
+            lenguaje: this.lenguaje,
+            anioLanzamiento: this.anioLanzamiento,
+            descripcion: this.descripcion,
+            sistemaOperativo: this.sistemaOperativo,
+            procesadorAmd: this.procesadorAmd,
+            procesadorIntel: this.procesadorIntel,
+            memoria: this.memoria,
+            tGraficaAmd: this.tGraficaAmd,
+            tGraficaNvidia: this.tGraficaNvidia,
+            imagen: this.imagen
+        }
+    }
 }
