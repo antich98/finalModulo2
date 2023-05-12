@@ -1,188 +1,133 @@
-class VideoJuego {
-    #codigo;
-    #titulo;
-    #precio;
-    #desarrollador;
-    #categoria;
-    #plataforma;
-    #lenguaje;
-    #anioLanzamiento;
-    #descripcion;
-    #sistemaOperativo;
-    #procesadorAmd;
-    #procesadorIntel;
-    #memoria;
-    #tGraficaAmd;
-    #tGraficaNvidia;
-    #imagen;
-  
-    constructor(codigo, titulo, precio, desarrollador, categoria, plataforma, lenguaje, anioLanzamiento, descripcion, sistemaOperativo, procesadorAmd, procesadorIntel, memoria, tGraficaAmd, tGraficaNvidia, imagen = []) {
-      this.#codigo = codigo;
-      this.#titulo = titulo;
-      this.#precio = precio;
-      this.#desarrollador = desarrollador;
-      this.#categoria = categoria;
-      this.#plataforma = plataforma;
-      this.#lenguaje = lenguaje;
-      this.#anioLanzamiento = anioLanzamiento;
-      this.#descripcion = descripcion;
-      this.#sistemaOperativo = sistemaOperativo;
-      this.#procesadorAmd = procesadorAmd;
-      this.#procesadorIntel = procesadorIntel;
-      this.#memoria = memoria;
-      this.#tGraficaAmd = tGraficaAmd;
-      this.#tGraficaNvidia = tGraficaNvidia;
-      this.#imagen = imagen;
-    }
-  
-    // getters
-    get codigo() {
-      return this.#codigo;
-    }
-  
-    get titulo() {
-      return this.#titulo;
-    }
-  
-    get precio() {
-      return this.#precio;
-    }
-  
-    get desarrollador() {
-      return this.#desarrollador;
-    }
-  
-    get categoria() {
-      return this.#categoria;
-    }
-  
-    get plataforma() {
-      return this.#plataforma;
-    }
-  
-    get lenguaje() {
-      return this.#lenguaje;
-    }
-  
-    get anioLanzamiento() {
-      return this.#anioLanzamiento;
-    }
-  
-    get descripcion() {
-      return this.#descripcion;
-    }
-  
-    get sistemaOperativo() {
-      return this.#sistemaOperativo;
-    }
-  
-    get procesadorAmd() {
-      return this.#procesadorAmd;
-    }
-  
-    get procesadorIntel() {
-      return this.#procesadorIntel;
-    }
-  
-    get memoria() {
-      return this.#memoria;
-    }
-  
-    get tGraficaAmd() {
-      return this.#tGraficaAmd;
-    }
-  
-    get tGraficaNvidia() {
-      return this.#tGraficaNvidia;
-    }
-  
-    get imagen() {
-      return this.#imagen;
-    }
-  
-    // setters
-    set codigo(codigo) {
-      this.#codigo = codigo;
-    }
+export default class VideoJuego {
+  #codigo;
+  #nombre;
+  #precio;
+  #desarrollador;
+  #categoria;
+  #plataforma;
+  #resenia;
+  #anioLanzamiento;
+  #descripcion;
+  #imagen;
 
-    set titulo(titulo) {
-      this.#titulo = titulo;
-    }
+  constructor(
+    codigo = uuidv4(),
+    nombre,
+    precio,
+    desarrollador,
+    categoria,
+    plataforma,
+    resenia,
+    anioLanzamiento,
+    descripcion,
+    imagen
+  ) {
+    this.#codigo = codigo;
+    this.#nombre = nombre;
+    this.#precio = precio;
+    this.#desarrollador = desarrollador;
+    this.#categoria = categoria;
+    this.#plataforma = plataforma;
+    this.#resenia = resenia;
+    this.#anioLanzamiento = anioLanzamiento;
+    this.#descripcion = descripcion;
+    this.#imagen = imagen;
+  }
 
-    set precio(precio) {
-      this.#precio = precio;
-    }
+  // getters
+  get codigo() {
+    return this.#codigo;
+  }
 
-    set desarrollador(desarrollador) {
-      this.#desarrollador = desarrollador;
-    }
+  get nombre() {
+    return this.#nombre;
+  }
 
-    set categoria(categoria) {
-      this.#categoria = categoria;
-    }
+  get precio() {
+    return this.#precio;
+  }
 
-    set plataforma(plataforma) {
-      this.#plataforma = plataforma;
-    }
+  get desarrollador() {
+    return this.#desarrollador;
+  }
 
-    set lenguaje(lenguaje) {
-      this.#lenguaje = lenguaje;
-    }
+  get categoria() {
+    return this.#categoria;
+  }
 
-    set anioLanzamiento(anioLanzamiento) {
-      this.#anioLanzamiento = anioLanzamiento;
-    }
+  get plataforma() {
+    return this.#plataforma;
+  }
 
-    set descripcion(descripcion) {
-      this.#descripcion = descripcion;
-    }
+  get resenia() {
+    return this.#resenia;
+  }
 
-    set sistemaOperativo(sistemaOperativo) {
-      this.#sistemaOperativo = sistemaOperativo;
-    }
+  get anioLanzamiento() {
+    return this.#anioLanzamiento;
+  }
 
-    set procesadorAmd(procesadorAmd) {
-      this.#procesadorAmd = procesadorAmd;
-    }
+  get descripcion() {
+    return this.#descripcion;
+  }
 
-    set procesadorIntel(procesadorIntel) {
-      this.#procesadorIntel = procesadorIntel;
-    }
+  get imagen() {
+    return this.#imagen;
+  }
 
-    set memoria(memoria) {
-      this.#memoria = memoria;
-    }
+  // setters
+  set codigo(codigo) {
+    this.#codigo = codigo;
+  }
 
-    set tGraficaAmd(tGraficaAmd) {
-      this.#tGraficaAmd = tGraficaAmd;
-    }
+  set nombre(nombre) {
+    this.#nombre = nombre;
+  }
 
-    set tGraficaNvidia(tGraficaNvidia) {
-      this.#tGraficaNvidia = tGraficaNvidia;
-    }
+  set precio(precio) {
+    this.#precio = precio;
+  }
 
-    set imagen(imagen) {
-      this.#imagen = imagen;
-    }
+  set desarrollador(desarrollador) {
+    this.#desarrollador = desarrollador;
+  }
 
-    toJson(){
-        return{
-            codigo: this.codigo,
-            titulo: this.titulo,
-            precio: this.precio,
-            desarrollador: this.desarrollador,
-            categoria: this.categoria,
-            plataforma: this.plataforma,
-            lenguaje: this.lenguaje,
-            anioLanzamiento: this.anioLanzamiento,
-            descripcion: this.descripcion,
-            sistemaOperativo: this.sistemaOperativo,
-            procesadorAmd: this.procesadorAmd,
-            procesadorIntel: this.procesadorIntel,
-            memoria: this.memoria,
-            tGraficaAmd: this.tGraficaAmd,
-            tGraficaNvidia: this.tGraficaNvidia,
-            imagen: this.imagen
-        }
-    }
+  set categoria(categoria) {
+    this.#categoria = categoria;
+  }
+
+  set plataforma(plataforma) {
+    this.#plataforma = plataforma;
+  }
+
+  set resenia(resenia) {
+    this.#resenia = resenia;
+  }
+
+  set anioLanzamiento(anioLanzamiento) {
+    this.#anioLanzamiento = anioLanzamiento;
+  }
+
+  set descripcion(descripcion) {
+    this.#descripcion = descripcion;
+  }
+
+  set imagen(imagen) {
+    this.#imagen = imagen;
+  }
+
+  toJson() {
+    return {
+      codigo: this.codigo,
+      nombre: this.nombre,
+      precio: this.precio,
+      desarrollador: this.desarrollador,
+      categoria: this.categoria,
+      plataforma: this.plataforma,
+      resenia: this.resenia,
+      anioLanzamiento: this.anioLanzamiento,
+      descripcion: this.descripcion,
+      imagen: this.imagen,
+    };
+  }
 }
