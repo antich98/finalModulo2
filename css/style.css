@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
-*{
-    font-family: 'Play', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+* {
+  font-family: "Play", sans-serif;
 }
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-main{
-    flex-grow: 1;
+main {
+  flex-grow: 1;
 }
-.card{
-    position: relative;
-    overflow: hidden;
-    border: 8px solid #bf01d3;
-    border-radius: 16px;
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 8px solid #bf01d3;
+  border-radius: 16px;
 }
-.card-img-top{
-    border-radius: 0;
+.card-img-top {
+  border-radius: 0;
 }
-.card-body{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    bottom: -364px;
-    background: linear-gradient(#00243d71, black);
-    backdrop-filter: blur(4px);
-    transition: ease-in-out .5s;
+.card-body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: -364px;
+  background: linear-gradient(#00243d71, black);
+  backdrop-filter: blur(4px);
+  transition: ease-in-out 0.5s;
 }
 
-.card:hover .card-body{
-    bottom: 0;
-    transition: all .5s;
+.card:hover .card-body {
+  bottom: 0;
+  transition: all 0.5s;
 }
-.btn-morado{
-    background: #00243d;
-    color: white;
+.btn-morado {
+  background: #00243d;
+  color: white;
 }
-.btn-morado:hover{
-    background: #35083a;
+.btn-morado:hover {
+  background: #35083a;
 }
 /* Paleta de colores: 
 #0f1214
@@ -51,71 +51,71 @@ main{
 */
 
 /* Página de detalle de pelicula */
-.cube{
-    --side-length: 200px;
-    --semi-side-length: calc(var(--side-length)/2);
-    width: var(--side-length);
-    height: var(--side-length);
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.85s cubic-bezier(0.175,0.885,0.320,1.275);
-    transform: rotateX(-15deg) rotateY(15deg);
+.cube {
+  --side-length: 200px;
+  --semi-side-length: calc(var(--side-length) / 2);
+  width: var(--side-length);
+  height: var(--side-length);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotateX(-15deg) rotateY(15deg);
 }
-.cube-face{
-    width: inherit;
-    height: inherit;
-    opacity: 1;
-    position: absolute;
+.cube-face {
+  width: inherit;
+  height: inherit;
+  opacity: 1;
+  position: absolute;
 }
-.front{
-    transform: translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.front {
+  transform: translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.back{
-    transform: rotateY(180deg) translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.back {
+  transform: rotateY(180deg) translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.left{
-    transform: rotateY(-90deg) translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img3.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.left {
+  transform: rotateY(-90deg) translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.right{
-    transform: rotateY(90deg) translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img4.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.right {
+  transform: rotateY(90deg) translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.top{
-    transform: rotateX(90deg) translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img5.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.top {
+  transform: rotateX(90deg) translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.bottom{
-    transform: rotateX(-90deg) translate3d(0,0,var(--semi-side-length));
-    background-image: url(../img/juego1_img6.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.bottom {
+  transform: rotateX(-90deg) translate3d(0, 0, var(--semi-side-length));
+  background-image: url(../img/juego1_img6.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.scene{
-    --side-length:200px;
-    width: var(--side-length);
-    height: var(--side-length);
-    margin-top: 50px;
-    perspective: 600px;
-    display: inline-block;
+.scene {
+  --side-length: 200px;
+  width: var(--side-length);
+  height: var(--side-length);
+  margin-top: 50px;
+  perspective: 600px;
+  display: inline-block;
 }
 
 /*controles*/
@@ -136,43 +136,73 @@ main{
 }    */
 
 .cube-button {
-    padding: 0;
-    border: none;
+  padding: 0;
+  border: none;
 }
 
 .cube-button-img {
-    width: 45px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 3px;
+  width: 45px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 3px;
 }
 
 .cube-gallery {
-    min-height: 380px;
+  min-height: 380px;
 }
 
 .rotate-1 {
-    transform: rotateX(-15deg) rotateY(15deg);
+  transform: rotateX(-15deg) rotateY(15deg);
 }
 
 .rotate-2 {
-    transform: rotateY(195deg);
+  transform: rotateY(195deg);
 }
 
 .rotate-3 {
-    transform: rotateY(105deg);
+  transform: rotateY(105deg);
 }
 
 .rotate-4 {
-    transform: rotateY(285deg);
+  transform: rotateY(285deg);
 }
 
 .rotate-5 {
-    transform: rotateX(255deg);
+  transform: rotateX(255deg);
 }
 
 .rotate-6 {
-    transform: rotateX(75deg);
+  transform: rotateX(75deg);
+}
+.fondo {
+  background-color: #b200ff;
+  background-image: linear-gradient(45deg, #b200ff 0%, #0045c7 18%, #0f1214 43%);
+  
+  background-attachment: fixed;
+}
+@media screen and (max-width: 576px) {
+  .gif {
+    width: 100%;
+    height: auto;
+  }
 }
 
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .gif {
+    width: 80%;
+    height: auto;
+  }
+}
 
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .gif {
+    width: 60%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gif {
+    width: 470px;
+    height: 470px;
+  }
+}
