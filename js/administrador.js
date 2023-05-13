@@ -37,6 +37,7 @@ console.log(listaJuegos);
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
 
+
 function prepararFormulario(e){
   e.preventDefault();
   crearJuego();
@@ -82,7 +83,12 @@ function limpiarFormulario(){
   formJuego.reset();
 }
 
-// borrar pelicula
-window.borrarPelicula = () => {
+// juego
+window.borrarJuego = (codigo) => {
+  console.log('aqui quiero borar')
+  let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
+  listaJuegos.splice(posicionVideoJuego, 1);
+  localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
   
+
 };
