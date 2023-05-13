@@ -1,9 +1,7 @@
 function validarCantidadCaracteres(texto, min, max){
     if(texto.length >= min && texto.length <= max){
-        console.log('aqui el texto tiene la cant. de caracteres correcto');
         return true;
     }else{
-        console.log('aqui el texto no cumple la validacion');
         return false;
     }
 }
@@ -38,7 +36,7 @@ function validarImagenes(texto){
      }
  }
 
-export function sumarioValidaciones(nombre, descripcion, imagen, precio, categoria, requisitos, desarrollador, anio, resenias){
+export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, requisitos, desarrollador, anio, resenias){
     let resumen = '';
     if(!validarCantidadCaracteres(nombre,3,70)){
         resumen = 'El titulo debe tener entre 3 y 70 caracteres <br>'

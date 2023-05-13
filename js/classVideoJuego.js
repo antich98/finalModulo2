@@ -1,37 +1,36 @@
 export default class VideoJuego {
   #codigo;
   #nombre;
-  #precio;
-  #desarrollador;
-  #categoria;
-  #plataforma;
-  #resenia;
-  #anioLanzamiento;
   #descripcion;
   #imagen;
+  #categoria;
+  #precio;
+  #requisitos;
+  #desarrollador;
+  #anio;
+  #resenias;
 
   constructor(
-    codigo = uuidv4(),
     nombre,
-    precio,
-    desarrollador,
-    categoria,
-    plataforma,
-    resenia,
-    anioLanzamiento,
     descripcion,
-    imagen
+    imagen,
+    categoria,
+    precio,
+    requisitos,
+    desarrollador,
+    anio,
+    resenias
   ) {
-    this.#codigo = codigo;
+    this.#codigo = uuidv4();
     this.#nombre = nombre;
-    this.#precio = precio;
-    this.#desarrollador = desarrollador;
-    this.#categoria = categoria;
-    this.#plataforma = plataforma;
-    this.#resenia = resenia;
-    this.#anioLanzamiento = anioLanzamiento;
     this.#descripcion = descripcion;
     this.#imagen = imagen;
+    this.#categoria = categoria;
+    this.#precio = precio;
+    this.#requisitos = requisitos;
+    this.#desarrollador = desarrollador;
+    this.#anio = anio;
+    this.#resenias = resenias;
   }
 
   // getters
@@ -43,36 +42,36 @@ export default class VideoJuego {
     return this.#nombre;
   }
 
-  get precio() {
-    return this.#precio;
-  }
-
-  get desarrollador() {
-    return this.#desarrollador;
-  }
-
-  get categoria() {
-    return this.#categoria;
-  }
-
-  get plataforma() {
-    return this.#plataforma;
-  }
-
-  get resenia() {
-    return this.#resenia;
-  }
-
-  get anioLanzamiento() {
-    return this.#anioLanzamiento;
-  }
-
   get descripcion() {
     return this.#descripcion;
   }
 
   get imagen() {
     return this.#imagen;
+  }
+
+  get categoria() {
+    return this.#categoria;
+  }
+
+  get precio() {
+    return this.#precio;
+  }
+
+  get requisitos() {
+    return this.#requisitos;
+  }
+
+  get desarrollador() {
+    return this.#desarrollador;
+  }
+
+  get (anio) {
+    return this.#anio;
+  }
+
+  get resenias() {
+    return this.#resenias;
   }
 
   // setters
@@ -84,30 +83,6 @@ export default class VideoJuego {
     this.#nombre = nombre;
   }
 
-  set precio(precio) {
-    this.#precio = precio;
-  }
-
-  set desarrollador(desarrollador) {
-    this.#desarrollador = desarrollador;
-  }
-
-  set categoria(categoria) {
-    this.#categoria = categoria;
-  }
-
-  set plataforma(plataforma) {
-    this.#plataforma = plataforma;
-  }
-
-  set resenia(resenia) {
-    this.#resenia = resenia;
-  }
-
-  set anioLanzamiento(anioLanzamiento) {
-    this.#anioLanzamiento = anioLanzamiento;
-  }
-
   set descripcion(descripcion) {
     this.#descripcion = descripcion;
   }
@@ -116,18 +91,42 @@ export default class VideoJuego {
     this.#imagen = imagen;
   }
 
-  toJson() {
+  set categoria(categoria) {
+    this.#categoria = categoria;
+  }
+
+  set precio(precio) {
+    this.#precio = precio;
+  }
+
+  set requisitos(requisitos) {
+    this.#requisitos = requisitos;
+  }
+
+  set desarrollador(desarrollador) {
+    this.#desarrollador = desarrollador;
+  }
+
+  set anio(anio) {
+    this.#anio = anio;
+  }
+
+  set resenias(resenias) {
+    this.#resenias = resenias;
+  }
+
+  toJSON() {
     return {
       codigo: this.codigo,
       nombre: this.nombre,
-      precio: this.precio,
-      desarrollador: this.desarrollador,
-      categoria: this.categoria,
-      plataforma: this.plataforma,
-      resenia: this.resenia,
-      anioLanzamiento: this.anioLanzamiento,
       descripcion: this.descripcion,
       imagen: this.imagen,
+      categoria: this.categoria,
+      precio: this.precio,
+      requisitos: this.requisitos,
+      desarrollador: this.desarrollador,
+      anio: this.anio,
+      resenias: this.resenias
     };
   }
 }
