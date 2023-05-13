@@ -24,7 +24,7 @@ window.onload = function () {
         alert("¡Bienvenido!");
   
         // Redirige al usuario a la página de administrador.html
-        window.location.href = "administrador.html";
+        window.location.href = "";
       } else {
         // Muestra un mensaje de error
         alert("Correo electrónico o contraseña incorrectos");

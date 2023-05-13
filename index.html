@@ -40,8 +40,10 @@
                     <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="./pages/iniciarSesion.html">Iniciar sesión</a>
-                  </li>
+                    <a role="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+                        Iniciar Sesión
+                    </a>
+                </li>
                 </ul>
               </div>
             </div>
@@ -110,6 +112,30 @@
           </aside>
         </article>
       </section>
+        <!-- Modal -->
+  <div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="modalIniciarSesionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalIniciarSesionLabel">Iniciar sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label for="inputEmail4" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div>
+                    <label for="inputPassword4" class="form-label">Contraeña</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="botonIniciarSesion">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <footer class="bg-dark text-secondary py-4">
       <p class="text-light text-center">Todos los derechos reservados</p>
@@ -119,6 +145,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/helperIniciarSesion.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
