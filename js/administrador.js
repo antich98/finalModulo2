@@ -2,7 +2,24 @@ import VideoJuego from "./classVideoJuego.js";
 
 // Variables globales
 let formJuego = document.getElementById("formJuego");
-let listaJuegos = [];
+let listaJuegos = localStorage.getItem("listaJuegos");
+
+// Si listaJuegos está vacía
+if(!listaJuegos){
+  listaJuegos = [];
+} else {
+  listaJuegos = JSON.parse(listaJuegos).map((videoJuego) => new VideoJuego(videoJuego.nombre, 
+    videoJuego.descripcion, 
+    videoJuego.imagen, 
+    videoJuego.categoria, 
+    videoJuego.precio, 
+    videoJuego.requisitos, 
+    videoJuego.desarrollador, 
+    videoJuego.anio, 
+    videoJuego.resenias)
+  );
+}
+console.log(listaJuegos);
 
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
