@@ -4,7 +4,7 @@ export default class VideoJuego {
   #precio;
   #desarrollador;
   #categoria;
-  #plataforma;
+  #requisitos;
   #resenia;
   #anioLanzamiento;
   #descripcion;
@@ -16,7 +16,7 @@ export default class VideoJuego {
     precio,
     desarrollador,
     categoria,
-    plataforma,
+    requisitos,
     resenia,
     anioLanzamiento,
     descripcion,
@@ -27,7 +27,7 @@ export default class VideoJuego {
     this.#precio = precio;
     this.#desarrollador = desarrollador;
     this.#categoria = categoria;
-    this.#plataforma = plataforma;
+    this.#requisitos = requisitos;
     this.#resenia = resenia;
     this.#anioLanzamiento = anioLanzamiento;
     this.#descripcion = descripcion;
@@ -55,8 +55,8 @@ export default class VideoJuego {
     return this.#categoria;
   }
 
-  get plataforma() {
-    return this.#plataforma;
+  get requisitos() {
+    return this.#requisitos;
   }
 
   get resenia() {
@@ -96,8 +96,8 @@ export default class VideoJuego {
     this.#categoria = categoria;
   }
 
-  set plataforma(plataforma) {
-    this.#plataforma = plataforma;
+  set requisitos(requisitos) {
+    this.#requisitos = requisitos;
   }
 
   set resenia(resenia) {
@@ -123,11 +123,11 @@ export default class VideoJuego {
       precio: this.precio,
       desarrollador: this.desarrollador,
       categoria: this.categoria,
-      plataforma: this.plataforma,
+      requisitos: this.requisitos,
       resenia: this.resenia,
       anioLanzamiento: this.anioLanzamiento,
       descripcion: this.descripcion,
-      imagen: this.imagen,
+      imagen: this.imagen
     };
   }
 }
