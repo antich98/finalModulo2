@@ -81,3 +81,8 @@ function mostrarAlert(estado, resumenErrores){
 function limpiarFormulario(){
   formJuego.reset();
 }
+
+// borrar pelicula
+window.borrarPelicula = () => {
+  
+};
