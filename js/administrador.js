@@ -42,8 +42,9 @@ function prepararFormulario(e){
 
 function crearJuego(){
 // Validar el formulario
-  let nuevoJuego = new VideoJuego("GTA", "1.99", "Rockstar", "Accion", "1", "2", "3", "4", "5");
 
+// Creo el juego
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
   console.log(nuevoJuego);
 // Guardar juego en el array
   listaJuegos.push(nuevoJuego);
