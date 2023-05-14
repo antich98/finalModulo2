@@ -43,6 +43,7 @@ function prepararFormulario(e){
 function crearJuego(){
   // Validar el formulario
   let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value);
+  console.log(plataforma.value)
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');

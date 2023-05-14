@@ -20,13 +20,6 @@ function validacionPrecio(precio){
         return false;
     }
 }
-function validacionPlataforma(plataforma){
-    if(plataforma >= 3 && plataforma <= 200){
-        return true;
-    }else{
-        return false;
-    }
-}
 function validarImagenes(texto){
     const patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|gif)$/
      if(patron.test(texto)){
@@ -56,8 +49,8 @@ export function sumarioValidaciones(nombre, descripcion, imagen, categoria, prec
     if(!validarCantidadCaracteres(categoria,3,300)){
         resumen += 'La categoría debe tener entre 3 y 300 caracteres <br>'
     }
-    if(!validacionPlataforma(plataforma)){
-        resumen += 'Plataforma debe tener entre 3 y 200 caracteres <br>'
+    if(!validarCantidadCaracteres(plataforma, 3, 50)){
+        resumen += 'Plataforma debe tener entre 3 y 50 caracteres <br>'
     }
     if(!validarImagenes(imagen)){
         resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
