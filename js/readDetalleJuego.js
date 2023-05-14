@@ -74,12 +74,54 @@ function cargarDetalleJuego(juego) {
           </div>
           <div class="scene">
             <div class="cube" id="cube">
-              <div class="cube-face front"></div>
-              <div class="cube-face back"></div>
-              <div class="cube-face left"></div>
-              <div class="cube-face right"></div>
-              <div class="cube-face top"></div>
-              <div class="cube-face bottom"></div>
+              <div class="cube-face front">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
+              <div class="cube-face back">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
+              <div class="cube-face left">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
+              <div class="cube-face right">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
+              <div class="cube-face top">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
+              <div class="cube-face bottom">
+              <img
+                class="w-100"
+                src="${juego.imagen}"
+                alt="imagen del juego"
+                id="btn-img-1"
+              />
+              </div>
             </div>
           </div>
         </aside>
