@@ -140,15 +140,14 @@ function crearJuego(){
   }
 }
 
-function mostrarAlert(estado, resumenErrores){
-    // Estado = true muestro el alert, caso contrario lo oculto
-  let alertMsjError = document.getElementById("alertMsjError");
+function mostrarAlert(estado, resumenErrores){("alertMsjError");
   if(estado){
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
       html: `<p class = "text-lg-start text-danger">${resumenErrores}</p>`,
-      footer: '<p>RocketPower 2023</p>'
+      footer: '<p>RocketPower 2023</p>',
+      confirmButtonColor: "#bf01d3",
     })
   }
 }
