@@ -72,45 +72,27 @@ main {
 }
 .front {
   transform: translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img1.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .back {
   transform: rotateY(180deg) translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img2.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .left {
   transform: rotateY(-90deg) translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img3.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .right {
   transform: rotateY(90deg) translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img4.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .top {
   transform: rotateX(90deg) translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img5.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .bottom {
   transform: rotateX(-90deg) translate3d(0, 0, var(--semi-side-length));
-  /* background-image: url(../img/juego1_img6.png); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .scene {
   --side-length: 200px;

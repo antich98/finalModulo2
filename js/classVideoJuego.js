@@ -2,7 +2,12 @@ export default class VideoJuego {
   #codigo;
   #nombre;
   #descripcion;
-  #imagen;
+  #imagenUno;
+  #imagenDos;
+  #imagenTres;
+  #imagenCuatro;
+  #imagenCinco;
+  #imagenSeis;
   #categoria;
   #precio;
   #desarrollador;
@@ -18,7 +23,12 @@ export default class VideoJuego {
   constructor(
     nombre,
     descripcion,
-    imagen,
+    imagenUno,
+    imagenDos,
+    imagenTres,
+    imagenCuatro,
+    imagenCinco,
+    imagenSeis,
     categoria,
     precio,
     desarrollador,
@@ -34,7 +44,12 @@ export default class VideoJuego {
     this.#codigo = uuidv4();
     this.#nombre = nombre;
     this.#descripcion = descripcion;
-    this.#imagen = imagen;
+    this.#imagenUno = imagenUno;
+    this.#imagenDos = imagenDos;
+    this.#imagenTres = imagenTres;
+    this.#imagenCuatro = imagenCuatro;
+    this.#imagenCinco = imagenCinco;
+    this.#imagenSeis = imagenSeis;
     this.#categoria = categoria;
     this.#precio = precio;
     this.#desarrollador = desarrollador;
@@ -61,8 +76,28 @@ export default class VideoJuego {
     return this.#descripcion;
   }
 
-  get imagen() {
-    return this.#imagen;
+  get imagenUno() {
+    return this.#imagenUno;
+  }
+
+  get imagenDos() {
+    return this.#imagenDos;
+  }
+
+  get imagenTres() {
+    return this.#imagenTres;
+  }
+
+  get imagenCuatro() {
+    return this.#imagenCuatro;
+  }
+
+  get imagenCinco() {
+    return this.#imagenCinco;
+  }
+
+  get imagenSeis() {
+    return this.#imagenSeis;
   }
 
   get categoria() {
@@ -122,8 +157,28 @@ export default class VideoJuego {
     this.#descripcion = descripcion;
   }
 
-  set imagen(imagen) {
-    this.#imagen = imagen;
+  set imagenUno(imagenUno) {
+    this.#imagenUno = imagenUno;
+  }
+
+  set imagenDos(imagenDos) {
+    this.#imagenDos = imagenDos;
+  }
+
+  set imagenTres(imagenTres) {
+    this.#imagenTres = imagenTres;
+  }
+
+  set imagenCuatro(imagenCuatro) {
+    this.#imagenCuatro = imagenCuatro;
+  }
+
+  set imagenCinco(imagenCinco) {
+    this.#imagenCinco = imagenCinco;
+  }
+
+  set imagenSeis(imagenSeis) {
+    this.#imagenSeis = imagenSeis;
   }
 
   set categoria(categoria) {
@@ -175,7 +230,12 @@ export default class VideoJuego {
       codigo: this.codigo,
       nombre: this.nombre,
       descripcion: this.descripcion,
-      imagen: this.imagen,
+      imagenUno: this.imagenUno,
+      imagenDos: this.imagenDos,
+      imagenTres: this.imagenTres,
+      imagenCuatro: this.imagenCuatro,
+      imagenCinco: this.imagenCinco,
+      imagenSeis: this.imagenSeis,
       categoria: this.categoria,
       precio: this.precio,
       desarrollador: this.desarrollador,
