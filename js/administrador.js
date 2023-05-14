@@ -144,10 +144,12 @@ function mostrarAlert(estado, resumenErrores){
     // Estado = true muestro el alert, caso contrario lo oculto
   let alertMsjError = document.getElementById("alertMsjError");
   if(estado){
-    alertMsjError.className = "alert alert-danger";
-    alertMsjError.innerHTML = resumenErrores
-  }else{
-    alertMsjError.className = "alert alert-success d-none";
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      html: `<p class = "text-lg-start text-danger">${resumenErrores}</p>`,
+      footer: '<p>RocketPower 2023</p>'
+    })
   }
 }
 function limpiarFormulario(){
