@@ -64,11 +64,44 @@ function crearJuego(){
     'Presiona ok para continuar',
     'success'
   )
+  //dibuja la fila
+  crearFila(nuevoJuego, listaJuegos.length);
   } else {
     //Falla la validación
     mostrarAlert(true, resumenErrores)
   }
 }
+
+// crear Fila eso despues se borra.
+function crearFila(videoJuego, indice){
+  let tablaJuego = document.querySelector('tbody');
+  tablaJuego.innerHTML += `
+  <tr>
+                <th scope="row">1</th>
+                <td>Juego 1</td>
+                <td class="text-truncate ancho pe-5">
+                  Descripción
+                </td>
+                <td class="text-truncate ancho pe-5">
+                  Link 
+                </td>
+                <td>Categoría</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-warning mx-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#Modal"
+                  >
+                    <i class="bi bi-pencil-square"></i></button
+                  ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${videoJuego.codigo}')">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+  `
+}
+
 function mostrarAlert(estado, resumenErrores){
     // Estado = true muestro el alert, caso contrario lo oculto
   let alertMsjError = document.getElementById("alertMsjError");
@@ -89,4 +122,6 @@ window.borrarJuego = (codigo) => {
   let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
   listaJuegos.splice(posicionVideoJuego, 1);
   localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
+  let tablaJuego = document.querySelector("tbody");
+      tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
 };
