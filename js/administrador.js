@@ -47,6 +47,48 @@ console.log(listaJuegos);
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
 
+// Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
+cargaInicial()
+
+// Bien se carga la página se ejecuta esta función, si hay juegos en LS los renderizo
+function cargaInicial() {
+  let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+  if (listaJuegos.length > 0) {
+    listaJuegos.map(( (juego, indice) => crearFila(juego, indice + 1) ))
+  } else {
+    // mostrar un mensaje que diga que no hay juegos aun
+    bodyTablaJuegos.innerHTML = `<tr><td colspan="6">No hay juegos cargados aun.</td></tr>`
+  }
+}
+
+function crearFila(juego, indiceCorregido) {
+    let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+    bodyTablaJuegos.innerHTML += `<tr>
+    <th scope="row">${indiceCorregido}</th>
+    <td>${juego.nombre}</td>
+    <td class="text-truncate ancho pe-5">
+      ${juego.descripcion}
+    </td>
+    <td class="text-truncate ancho pe-5">
+      ${juego.imagen}
+    </td>
+    <td>${juego.categoria}</td>
+    <td>
+      <button
+        type="button"
+        class="btn btn-warning mx-1"
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+      >
+        <i class="bi bi-pencil-square"></i></button
+      ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
+        <i class="bi bi-x-square"></i>
+      </button>
+    </td>
+  </tr>`
+}
+
+
 function prepararFormulario(e){
   e.preventDefault();
   crearJuego();
@@ -74,6 +116,13 @@ function crearJuego(){
     'Presiona ok para continuar',
     'success'
   )
+  if (listaJuegos.length > 1) {
+    crearFila(nuevoJuego, listaJuegos.length)
+  } else {
+    let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+    bodyTablaJuegos.innerHTML = ""
+    crearFila(nuevoJuego, listaJuegos.length)
+  }
   } else {
     //Falla la validación
     mostrarAlert(true, resumenErrores)
