@@ -71,7 +71,7 @@ function crearFila(juego, indiceCorregido) {
         data-bs-target="#Modal"
       >
         <i class="bi bi-pencil-square"></i></button
-      ><button type="button" class="btn btn-danger mx-1">
+      ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
         <i class="bi bi-x-square"></i>
       </button>
     </td>
