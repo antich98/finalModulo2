@@ -26,7 +26,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-1">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenUno}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -34,7 +34,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-2">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenDos}"
                 alt="imagen del juego"
                 id="btn-img-2"
               />
@@ -42,7 +42,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-3">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenTres}"
                 alt="imagen del juego"
                 id="btn-img-3"
               />
@@ -50,7 +50,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-4">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenCuatro}"
                 alt="imagen del juego"
                 id="btn-img-4"
               />
@@ -58,7 +58,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-5">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenCinco}"
                 alt="imagen del juego"
                 id="btn-img-5"
               />
@@ -66,7 +66,7 @@ function cargarDetalleJuego(juego) {
             <button class="cube-button" id="cube-btn-6">
               <img
                 class="cube-button-img"
-                src="${juego.imagen}"
+                src="${juego.imagenSeis}"
                 alt="imagen del juego"
                 id="btn-img-6"
               />
@@ -77,7 +77,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face front">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenUno}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -85,7 +85,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face back">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenDos}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -93,7 +93,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face left">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenTres}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -101,7 +101,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face right">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenCuatro}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -109,7 +109,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face top">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenCinco}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />
@@ -117,7 +117,7 @@ function cargarDetalleJuego(juego) {
               <div class="cube-face bottom">
               <img
                 class="w-100"
-                src="${juego.imagen}"
+                src="${juego.imagenSeis}"
                 alt="imagen del juego"
                 id="btn-img-1"
               />

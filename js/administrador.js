@@ -6,7 +6,12 @@ let formJuego = document.getElementById("formJuego");
 let codigo = document.getElementById("codigo"),
 nombre = document.getElementById("nombre"),
 descripcion = document.getElementById("descripcion"),
-imagen = document.getElementById("imagen"),
+imagenUno = document.getElementById("imagenUno"),
+imagenDos = document.getElementById("imagenDos"),
+imagenTres = document.getElementById("imagenTres"),
+imagenCuatro = document.getElementById("imagenCuatro"),
+imagenCinco = document.getElementById("imagenCinco"),
+imagenSeis = document.getElementById("imagenSeis"),
 categoria = document.getElementById("categoria"),
 precio = document.getElementById("precio"),
 desarrollador = document.getElementById("desarrollador"),
@@ -28,7 +33,12 @@ if(!listaJuegos){
   listaJuegos = JSON.parse(listaJuegos).map((videoJuego) => new VideoJuego(
     videoJuego.nombre, 
     videoJuego.descripcion, 
-    videoJuego.imagen, 
+    videoJuego.imagenUno, 
+    videoJuego.imagenDos, 
+    videoJuego.imagenTres, 
+    videoJuego.imagenCuatro, 
+    videoJuego.imagenCinco, 
+    videoJuego.imagenSeis,
     videoJuego.categoria, 
     videoJuego.precio, 
     videoJuego.desarrollador, 
@@ -71,7 +81,7 @@ function crearFila(juego, indiceCorregido) {
       ${juego.descripcion}
     </td>
     <td class="text-truncate ancho pe-5">
-      ${juego.imagen}
+      ${juego.precio}
     </td>
     <td>${juego.categoria}</td>
     <td>
@@ -96,12 +106,12 @@ function prepararFormulario(e){
 
 function crearJuego(){
   // Validar el formulario
-  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
+  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagenUno.value, imagenDos.value, imagenTres.value, imagenCuatro.value, imagenCinco.value, imagenSeis.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
   console.log(plataforma.value)
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');
-  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagenUno.value, imagenDos.value, imagenTres.value, imagenCuatro.value, imagenCinco.value, imagenSeis.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
   console.log(nuevoJuego);
   // Guardar juego en el array
   listaJuegos.push(nuevoJuego);
