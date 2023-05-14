@@ -57,7 +57,7 @@ function crearJuego(){
   // Guardar el array en el local storage
   localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
   // Limpiar el formulario
-  //limpiarFormulario();
+  limpiarFormulario();
   // Mostrar un mensaje
   Swal.fire(
     '¡Juego cargado!',
@@ -70,36 +70,6 @@ function crearJuego(){
     //Falla la validación
     mostrarAlert(true, resumenErrores)
   }
-}
-
-// crear Fila eso despues se borra.
-function crearFila(videoJuego, indice){
-  let tablaJuego = document.querySelector('tbody');
-  tablaJuego.innerHTML += `
-  <tr>
-                <th scope="row">${indice}</th>
-                <td>${videoJuego.nombre}</td>
-                <td class="text-truncate ancho pe-5">
-                  ${videoJuego.descripcion}
-                </td>
-                <td class="text-truncate ancho pe-5">
-                  Link 
-                </td>
-                <td>Categoría</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-warning mx-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#Modal"
-                  >
-                    <i class="bi bi-pencil-square"></i></button
-                  ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${videoJuego.codigo}')">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-  `
 }
 
 function mostrarAlert(estado, resumenErrores){
