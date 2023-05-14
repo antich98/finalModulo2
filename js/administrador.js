@@ -57,7 +57,7 @@ function crearJuego(){
   // Guardar el array en el local storage
   localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
   // Limpiar el formulario
-  limpiarFormulario();
+  //limpiarFormulario();
   // Mostrar un mensaje
   Swal.fire(
     '¡Juego cargado!',
@@ -77,10 +77,10 @@ function crearFila(videoJuego, indice){
   let tablaJuego = document.querySelector('tbody');
   tablaJuego.innerHTML += `
   <tr>
-                <th scope="row">1</th>
-                <td>Juego 1</td>
+                <th scope="row">${indice}</th>
+                <td>${videoJuego.nombre}</td>
                 <td class="text-truncate ancho pe-5">
-                  Descripción
+                  ${videoJuego.descripcion}
                 </td>
                 <td class="text-truncate ancho pe-5">
                   Link 
@@ -133,7 +133,7 @@ window.borrarJuego = (codigo) => {
       listaJuegos.splice(posicionVideoJuego, 1);
       localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
       let tablaJuego = document.querySelector("tbody");
-          tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
+      tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
     }
   });
 };
