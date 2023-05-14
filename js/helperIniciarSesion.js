@@ -23,6 +23,9 @@ window.onload = function () {
       // Muestra una alerta de bienvenida
       alert("¡Bienvenido!");
 
+      // Muestra el enlace de Administrador en el navbar
+      document.getElementById("enlaceAdministrador").classList.remove("d-none");
+
       // Redirige al usuario a la página de administrador.html
       window.location.href = "./pages/administrador.html";
     } else {
@@ -31,3 +34,4 @@ window.onload = function () {
     }
   });
 };
+
