@@ -118,18 +118,16 @@ function limpiarFormulario(){
 
 // juego
 window.borrarJuego = (codigo) => {
-  console.log('aqui quiero borar')
   Swal.fire({
-    title: "¿Esta seguro de eliminar la pelicula?",
-    text: "No puedes revertir posteriormente este paso",
+    title: "¿Esta seguro de eliminar el video juego?",
+    text: "Recuerda que no puedes recuperar el juego cuando lo borras",
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#3085d6",
+    confirmButtonColor: "#bf01d3",
     cancelButtonColor: "#d33",
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar",
   }).then((result) => {
-    console.log(result);
     if (result.isConfirmed) {
       let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
       listaJuegos.splice(posicionVideoJuego, 1);
