@@ -89,7 +89,4 @@ window.borrarJuego = (codigo) => {
   let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
   listaJuegos.splice(posicionVideoJuego, 1);
   localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
-  
-
-
 };
