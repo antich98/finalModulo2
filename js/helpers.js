@@ -28,8 +28,27 @@ function validarImagenes(texto){
          return false;
      }
  }
-
-export function sumarioValidaciones(nombre, descripcion, imagenUno, imagenDos, imagenTres, imagenCuatro, imagenCinco, imagenSeis, categoria, precio, desarrollador, anio, plataforma){
+//  #codigo;
+//  #nombre;
+//  #descripcion;
+//  #imagenUno;
+//  #imagenDos;
+//  #imagenTres;
+//  #imagenCuatro;
+//  #imagenCinco;
+//  #imagenSeis;
+//  #categoria;
+//  #precio;
+//  #desarrollador;
+//  #anio;
+//  #plataforma;
+//  #sistemaOperativo;
+//  #procesadorAmd;
+//  #procesadorIntel;
+//  #memoria;
+//  #tGraficaAmd;
+//  #tGraficaNvidia;
+export function sumarioValidaciones(nombre, descripcion, imagenUno, imagenDos, imagenTres, imagenCuatro, imagenCinco, imagenSeis, categoria, precio, desarrollador, anio, plataforma, sistemaOperativo, procesadorAmd, procesadorIntel, memoria, tGraficaAmd, tGraficaNvidia){
     let resumen = '';
     if(!validarCantidadCaracteres(nombre,3,70)){
         resumen = 'El titulo debe tener entre 3 y 70 caracteres <br>'
@@ -49,26 +68,32 @@ export function sumarioValidaciones(nombre, descripcion, imagenUno, imagenDos, i
     if(!validarCantidadCaracteres(categoria,3,300)){
         resumen += 'La categoría debe tener entre 3 y 300 caracteres <br>'
     }
-    if(!validarCantidadCaracteres(plataforma, 3, 50)){
+    if(!validarCantidadCaracteres(plataforma, 2, 50)){
         resumen += 'Plataforma debe tener entre 3 y 50 caracteres <br>'
     }
     if(!validarImagenes(imagenUno)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 1 valida, con terminacion (.jpg, .png, .gif) <br>'
     }
     if(!validarImagenes(imagenDos)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 2 valida, con terminacion (.jpg, .png, .gif) <br>'
     }
     if(!validarImagenes(imagenTres)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 3 valida, con terminacion (.jpg, .png, .gif) <br>'
     }
     if(!validarImagenes(imagenCuatro)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 4 valida, con terminacion (.jpg, .png, .gif) <br>'
     }
     if(!validarImagenes(imagenCinco)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 5 valida, con terminacion (.jpg, .png, .gif) <br>'
     }
     if(!validarImagenes(imagenSeis)){
-        resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
+        resumen += 'Debe ingresar una url de imagen 6 valida, con terminacion (.jpg, .png, .gif) <br>'
+    }
+    if(!validarCantidadCaracteres(sistemaOperativo, 2, 100)){
+        resumen += 'El sistema operativo debe tener entre 3 y 50 caracteres <br>'
+    }
+    if(!validarCantidadCaracteres(procesadorAmd, 2, 100)){
+        resumen += 'Plataforma debe tener entre 3 y 50 caracteres <br>'
     }
     
     return resumen;
