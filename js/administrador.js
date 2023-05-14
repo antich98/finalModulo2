@@ -9,10 +9,15 @@ descripcion = document.getElementById("descripcion"),
 imagen = document.getElementById("imagen"),
 categoria = document.getElementById("categoria"),
 precio = document.getElementById("precio"),
-requisitos = document.getElementById("requisitos"),
 desarrollador = document.getElementById("desarrollador"),
 anio = document.getElementById("anio"),
-resenias = document.getElementById("resenias");
+plataforma = document.getElementById("plataforma"),
+sistemaOperativo = document.getElementById("sistemaOperativo"),
+procesadorAmd = document.getElementById("procesadorAmd"),
+procesadorIntel = document.getElementById("procesadorIntel"),
+memoria = document.getElementById("memoria"),
+tGraficaAmd = document.getElementById("tGraficaAmd"),
+tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
 let listaJuegos = localStorage.getItem("listaJuegos");
 
@@ -26,10 +31,15 @@ if(!listaJuegos){
     videoJuego.imagen, 
     videoJuego.categoria, 
     videoJuego.precio, 
-    videoJuego.requisitos, 
     videoJuego.desarrollador, 
     videoJuego.anio, 
-    videoJuego.resenias)
+    videoJuego.plataforma,
+    videoJuego.sistemaOperativo,
+    videoJuego.procesadorAmd,
+    videoJuego.procesadorIntel,
+    videoJuego.memoria,
+    videoJuego.tGraficaAmd,
+    videoJuego.tGraficaNvidia)
   );
 }
 console.log(listaJuegos);
@@ -44,11 +54,12 @@ function prepararFormulario(e){
 
 function crearJuego(){
   // Validar el formulario
-  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
+  console.log(plataforma.value)
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');
-  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
   console.log(nuevoJuego);
   // Guardar juego en el array
   listaJuegos.push(nuevoJuego);

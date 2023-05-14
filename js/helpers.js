@@ -20,13 +20,6 @@ function validacionPrecio(precio){
         return false;
     }
 }
-function validacionResenia(resenia){
-    if(resenia >= 1 && resenia <= 10){
-        return true;
-    }else{
-        return false;
-    }
-}
 function validarImagenes(texto){
     const patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|gif)$/
      if(patron.test(texto)){
@@ -36,16 +29,13 @@ function validarImagenes(texto){
      }
  }
 
-export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, requisitos, desarrollador, anio, resenias){
+export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, desarrollador, anio, plataforma){
     let resumen = '';
     if(!validarCantidadCaracteres(nombre,3,70)){
         resumen = 'El titulo debe tener entre 3 y 70 caracteres <br>'
     }
     if(!validarCantidadCaracteres(descripcion,3,1000)){
         resumen += 'La descripción debe tener entre 3 y 70 caracteres <br>'
-    }
-    if(!validarCantidadCaracteres(requisitos,3,1000)){
-        resumen += 'Los requisitos deben tener entre 3 y 1000 caracteres <br>'
     }
     if(!validarCantidadCaracteres(desarrollador,3,300)){
         resumen += 'El campo desarrollador debe tener entre 3 y 300 caracteres <br>'
@@ -59,8 +49,8 @@ export function sumarioValidaciones(nombre, descripcion, imagen, categoria, prec
     if(!validarCantidadCaracteres(categoria,3,300)){
         resumen += 'La categoría debe tener entre 3 y 300 caracteres <br>'
     }
-    if(!validacionResenia(resenias)){
-        resumen += 'La resenia debe tener una puntuación entre 1 y 10. <br>'
+    if(!validarCantidadCaracteres(plataforma, 3, 50)){
+        resumen += 'Plataforma debe tener entre 3 y 50 caracteres <br>'
     }
     if(!validarImagenes(imagen)){
         resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
