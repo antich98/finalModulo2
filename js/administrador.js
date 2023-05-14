@@ -37,6 +37,45 @@ console.log(listaJuegos);
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
 
+// Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
+cargaInicial()
+
+// Bien se carga la página se ejecuta esta función, si hay juegos en LS los renderizo
+function cargaInicial() {
+  if (listaJuegos.length > 0) {
+    listaJuegos.map(( juego => crearFila(juego) ))
+  } else {
+    // mostrar un mensaje que diga que no hay juegos aun
+  }
+}
+
+function crearFila(juego) {
+  let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+  bodyTablaJuegos.innerHTML += `<tr>
+  <th scope="row">2</th>
+  <td>${juego.nombre}</td>
+  <td class="text-truncate ancho pe-5">
+    ${juego.descripcion}
+  </td>
+  <td class="text-truncate ancho pe-5">
+    ${juego.imagen}
+  </td>
+  <td>${juego.categoria}</td>
+  <td>
+    <button
+      type="button"
+      class="btn btn-warning mx-1"
+      data-bs-toggle="modal"
+      data-bs-target="#Modal"
+    >
+      <i class="bi bi-pencil-square"></i></button
+    ><button type="button" class="btn btn-danger mx-1">
+      <i class="bi bi-x-square"></i>
+    </button>
+  </td>
+</tr>`
+}
+
 function prepararFormulario(e){
   e.preventDefault();
   crearJuego();
