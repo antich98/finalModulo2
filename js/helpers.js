@@ -36,16 +36,13 @@ function validarImagenes(texto){
      }
  }
 
-export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, requisitos, desarrollador, anio, plataforma){
+export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, desarrollador, anio, plataforma){
     let resumen = '';
     if(!validarCantidadCaracteres(nombre,3,70)){
         resumen = 'El titulo debe tener entre 3 y 70 caracteres <br>'
     }
     if(!validarCantidadCaracteres(descripcion,3,1000)){
         resumen += 'La descripción debe tener entre 3 y 70 caracteres <br>'
-    }
-    if(!validarCantidadCaracteres(requisitos,3,1000)){
-        resumen += 'Los requisitos deben tener entre 3 y 1000 caracteres <br>'
     }
     if(!validarCantidadCaracteres(desarrollador,3,300)){
         resumen += 'El campo desarrollador debe tener entre 3 y 300 caracteres <br>'

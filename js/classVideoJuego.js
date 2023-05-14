@@ -5,7 +5,6 @@ export default class VideoJuego {
   #imagen;
   #categoria;
   #precio;
-  #requisitos;
   #desarrollador;
   #anio;
   #plataforma;
@@ -16,7 +15,6 @@ export default class VideoJuego {
     imagen,
     categoria,
     precio,
-    requisitos,
     desarrollador,
     anio,
     plataforma
@@ -27,7 +25,6 @@ export default class VideoJuego {
     this.#imagen = imagen;
     this.#categoria = categoria;
     this.#precio = precio;
-    this.#requisitos = requisitos;
     this.#desarrollador = desarrollador;
     this.#anio = anio;
     this.#plataforma = plataforma;
@@ -56,10 +53,6 @@ export default class VideoJuego {
 
   get precio() {
     return this.#precio;
-  }
-
-  get requisitos() {
-    return this.#requisitos;
   }
 
   get desarrollador() {
@@ -99,10 +92,6 @@ export default class VideoJuego {
     this.#precio = precio;
   }
 
-  set requisitos(requisitos) {
-    this.#requisitos = requisitos;
-  }
-
   set desarrollador(desarrollador) {
     this.#desarrollador = desarrollador;
   }
@@ -123,7 +112,6 @@ export default class VideoJuego {
       imagen: this.imagen,
       categoria: this.categoria,
       precio: this.precio,
-      requisitos: this.requisitos,
       desarrollador: this.desarrollador,
       anio: this.anio,
       plataforma: this.plataforma

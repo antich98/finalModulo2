@@ -9,7 +9,6 @@ descripcion = document.getElementById("descripcion"),
 imagen = document.getElementById("imagen"),
 categoria = document.getElementById("categoria"),
 precio = document.getElementById("precio"),
-requisitos = document.getElementById("requisitos"),
 desarrollador = document.getElementById("desarrollador"),
 anio = document.getElementById("anio"),
 plataforma = document.getElementById("plataforma");
@@ -26,7 +25,6 @@ if(!listaJuegos){
     videoJuego.imagen, 
     videoJuego.categoria, 
     videoJuego.precio, 
-    videoJuego.requisitos, 
     videoJuego.desarrollador, 
     videoJuego.anio, 
     videoJuego.plataforma)
@@ -44,11 +42,11 @@ function prepararFormulario(e){
 
 function crearJuego(){
   // Validar el formulario
-  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, plataforma.value);
+  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value);
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');
-  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, plataforma.value);
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value);
   console.log(nuevoJuego);
   // Guardar juego en el array
   listaJuegos.push(nuevoJuego);
