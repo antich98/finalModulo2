@@ -207,8 +207,7 @@
                         aria-label="nombre"
                         id="nombre"
                         maxlength="70"
-                        minlength="3"
-                        required                  
+                        minlength="3"                  
                       />
                     </div>
                     <div class="col-12">
@@ -223,7 +222,6 @@
                         id="descripcion"
                         maxlength="1000"
                         minlength="3"
-                        required
                       ></textarea>
                     </div>
                     <div class="col-12">
@@ -236,7 +234,6 @@
                         id="imagen"
                         maxlength="1000"
                         minlength="3"
-                        required
                              />
                     </div>
                     <div class="col-12">
@@ -249,7 +246,6 @@
                         id="categoria"
                         maxlength="300"
                         minlength="3"
-                        required
                       />
                     </div>
                     <div class="col-12">
@@ -262,7 +258,6 @@
                         id="precio"
                         max="1000000"
                         min="1"
-                        required
                       />
                     </div>
                     <div class="col-12">
@@ -300,6 +295,81 @@
                         minlength="3"
                         maxlength="50"
                       />
+                    </div>
+                    <div class="col-12">
+                      <label for="sistemaOperativo" class="form-label">Sistema Operativo *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="sistemaOperativo"
+                        placeholder="Ej: Computadora"
+                        id="sistemaOperativo"
+                        minlength="3"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between">
+                      
+                    <div class="col-5">
+                      <label for="procesadorAmd" class="form-label">Procesador Amd *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="procesadorAmd"
+                        placeholder="Ej: AMD"
+                        id="procesadorAmd"
+                        minlength="3"
+                        maxlength="50"
+                      />
+                    </div>
+                    <div class="col-5">
+                      <label for="procesadorIntel" class="form-label">Procesador Intel *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="procesadorIntel"
+                        placeholder="Ej: i5"
+                        id="procesadorIntel"
+                        minlength="3"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="col-5">
+                      <label for="memoria" class="form-label">Memoria *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="memoria"
+                        placeholder="Memoria"
+                        id="memoria"
+                        minlength="3"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="col-5">
+                      <label for="tGraficaAmd" class="form-label">Tarjeta Grafica Amd *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="tGraficaAmd"
+                        placeholder="RadeonHD7850 2gb"
+                        id="tGraficaAmd"
+                        minlength="3"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="col-5">
+                      <label for="tGraficaNvidia" class="form-label">Tarjeta Grafica NVIDIA *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="tGraficaNvidia"
+                        placeholder="GForce gtx 660 2gb"
+                        id="tGraficaNvidia"
+                        minlength="3"
+                        maxlength="100"
+                      />
+                    </div>
                     </div>
                     <div class="alert alert-danger d-none" role="alert" id="alertMsjError">
                     </div>

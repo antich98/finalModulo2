@@ -8,6 +8,12 @@ export default class VideoJuego {
   #desarrollador;
   #anio;
   #plataforma;
+  #sistemaOperativo;
+  #procesadorAmd;
+  #procesadorIntel;
+  #memoria;
+  #tGraficaAmd;
+  #tGraficaNvidia;
 
   constructor(
     nombre,
@@ -17,7 +23,13 @@ export default class VideoJuego {
     precio,
     desarrollador,
     anio,
-    plataforma
+    plataforma,
+    sistemaOperativo,
+    procesadorAmd,
+    procesadorIntel,
+    memoria,
+    tGraficaAmd,
+    tGraficaNvidia
   ) {
     this.#codigo = uuidv4();
     this.#nombre = nombre;
@@ -28,6 +40,12 @@ export default class VideoJuego {
     this.#desarrollador = desarrollador;
     this.#anio = anio;
     this.#plataforma = plataforma;
+    this.#sistemaOperativo = sistemaOperativo;
+    this.#procesadorAmd = procesadorAmd;
+    this.#procesadorIntel = procesadorIntel;
+    this.#memoria = memoria;
+    this.#tGraficaAmd = tGraficaAmd;
+    this.#tGraficaNvidia = tGraficaNvidia;
   }
 
   // getters
@@ -59,12 +77,36 @@ export default class VideoJuego {
     return this.#desarrollador;
   }
 
-  get (anio) {
+  get anio() {
     return this.#anio;
   }
 
   get plataforma() {
     return this.#plataforma;
+  }
+
+  get sistemaOperativo() {
+    return this.#sistemaOperativo;
+  }
+
+  get procesadorAmd() {
+    return this.#procesadorAmd;
+  }
+
+  get procesadorIntel() {
+    return this.#procesadorIntel;
+  }
+
+  get memoria() {
+    return this.#memoria;
+  }
+
+  get tGraficaAmd() {
+    return this.#tGraficaAmd;
+  }
+
+  get tGraficaNvidia() {
+    return this.#tGraficaNvidia;
   }
 
   // setters
@@ -104,6 +146,30 @@ export default class VideoJuego {
     this.#plataforma = plataforma;
   }
 
+  set sistemaOperativo(sistemaOperativo) {
+    this.#sistemaOperativo = sistemaOperativo;
+  }
+
+  set procesadorAmd(procesadorAmd) {
+    this.#procesadorAmd = procesadorAmd;
+  }
+
+  set procesadorIntel(procesadorIntel) {
+    this.#procesadorIntel = procesadorIntel;
+  }
+
+  set memoria(memoria) {
+    this.#memoria = memoria;
+  }
+
+  set tGraficaAmd(tGraficaAmd) {
+    this.#tGraficaAmd = tGraficaAmd;
+  }
+
+  set tGraficaNvidia(tGraficaNvidia) {
+    this.#tGraficaNvidia = tGraficaNvidia;
+  }
+
   toJSON() {
     return {
       codigo: this.codigo,
@@ -114,7 +180,13 @@ export default class VideoJuego {
       precio: this.precio,
       desarrollador: this.desarrollador,
       anio: this.anio,
-      plataforma: this.plataforma
+      plataforma: this.plataforma,
+      sistemaOperativo: this.sistemaOperativo,
+      procesadorAmd: this.procesadorAmd,
+      procesadorIntel: this.procesadorIntel,
+      memoria: this.memoria,
+      tGraficaAmd: this.tGraficaAmd,
+      tGraficaNvidia: this.tGraficaNvidia
     };
   }
 }
