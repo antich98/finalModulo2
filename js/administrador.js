@@ -102,6 +102,7 @@ function crearJuego(){
     'Presiona ok para continuar',
     'success'
   )
+  crearFila(nuevoJuego, listaJuegos.length)
   } else {
     //Falla la validación
     mostrarAlert(true, resumenErrores)
