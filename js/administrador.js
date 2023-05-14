@@ -47,6 +47,7 @@ console.log(listaJuegos);
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
 
+
 // Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
 cargaInicial()
 
@@ -88,7 +89,6 @@ function crearFila(juego, indiceCorregido) {
   </tr>`
 }
 
-
 function prepararFormulario(e){
   e.preventDefault();
   crearJuego();
@@ -123,11 +123,13 @@ function crearJuego(){
     bodyTablaJuegos.innerHTML = ""
     crearFila(nuevoJuego, listaJuegos.length)
   }
+
   } else {
     //Falla la validación
     mostrarAlert(true, resumenErrores)
   }
 }
+
 function mostrarAlert(estado, resumenErrores){
     // Estado = true muestro el alert, caso contrario lo oculto
   let alertMsjError = document.getElementById("alertMsjError");
@@ -141,3 +143,27 @@ function mostrarAlert(estado, resumenErrores){
 function limpiarFormulario(){
   formJuego.reset();
 }
+
+// juego
+window.borrarJuego = (codigo) => {
+  Swal.fire({
+    title: "¿Esta seguro de eliminar el video juego?",
+    text: "Recuerda que no puedes recuperar el juego cuando lo borras",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#bf01d3",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
+      listaJuegos.splice(posicionVideoJuego, 1);
+      localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
+      let tablaJuego = document.querySelector("tbody");
+      tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
+      window.location.reload();
+      Swal.fire("Juego eliminada", "El juego seleccionado fue eliminado correctamente", "success");
+    }
+  });
+};
