@@ -13,7 +13,7 @@ git clone https://github.com/antich98/finalModulo2.git
 ```
 ## Autores
 - [Santiago Antich Llarrull](https://github.com/antich98) 
-- [Ezequiel Monachesi]()
+- [Ezequiel Monachesi](https://github.com/ezequielmonachesi)
 - [Yusid Alderete]()
-- [Laura Susana Rota]()
-- [Daniel Nicolás Pomo]()
+- [Laura Susana Rota](https://github.com/RLauraS)
+- [Daniel Nicolás Pomo](https://github.com/danielPomo)

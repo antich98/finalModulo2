@@ -9,10 +9,15 @@ descripcion = document.getElementById("descripcion"),
 imagen = document.getElementById("imagen"),
 categoria = document.getElementById("categoria"),
 precio = document.getElementById("precio"),
-requisitos = document.getElementById("requisitos"),
 desarrollador = document.getElementById("desarrollador"),
 anio = document.getElementById("anio"),
-resenias = document.getElementById("resenias");
+plataforma = document.getElementById("plataforma"),
+sistemaOperativo = document.getElementById("sistemaOperativo"),
+procesadorAmd = document.getElementById("procesadorAmd"),
+procesadorIntel = document.getElementById("procesadorIntel"),
+memoria = document.getElementById("memoria"),
+tGraficaAmd = document.getElementById("tGraficaAmd"),
+tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
 let listaJuegos = localStorage.getItem("listaJuegos");
 
@@ -26,10 +31,15 @@ if(!listaJuegos){
     videoJuego.imagen, 
     videoJuego.categoria, 
     videoJuego.precio, 
-    videoJuego.requisitos, 
     videoJuego.desarrollador, 
     videoJuego.anio, 
-    videoJuego.resenias)
+    videoJuego.plataforma,
+    videoJuego.sistemaOperativo,
+    videoJuego.procesadorAmd,
+    videoJuego.procesadorIntel,
+    videoJuego.memoria,
+    videoJuego.tGraficaAmd,
+    videoJuego.tGraficaNvidia)
   );
 }
 console.log(listaJuegos);
@@ -38,6 +48,47 @@ console.log(listaJuegos);
 formJuego.addEventListener("submit", prepararFormulario);
 
 
+// Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
+cargaInicial()
+
+// Bien se carga la página se ejecuta esta función, si hay juegos en LS los renderizo
+function cargaInicial() {
+  let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+  if (listaJuegos.length > 0) {
+    listaJuegos.map(( (juego, indice) => crearFila(juego, indice + 1) ))
+  } else {
+    // mostrar un mensaje que diga que no hay juegos aun
+    bodyTablaJuegos.innerHTML = `<tr><td colspan="6">No hay juegos cargados aun.</td></tr>`
+  }
+}
+
+function crearFila(juego, indiceCorregido) {
+    let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+    bodyTablaJuegos.innerHTML += `<tr>
+    <th scope="row">${indiceCorregido}</th>
+    <td>${juego.nombre}</td>
+    <td class="text-truncate ancho pe-5">
+      ${juego.descripcion}
+    </td>
+    <td class="text-truncate ancho pe-5">
+      ${juego.imagen}
+    </td>
+    <td>${juego.categoria}</td>
+    <td>
+      <button
+        type="button"
+        class="btn btn-warning mx-1"
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+      >
+        <i class="bi bi-pencil-square"></i></button
+      ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
+        <i class="bi bi-x-square"></i>
+      </button>
+    </td>
+  </tr>`
+}
+
 function prepararFormulario(e){
   e.preventDefault();
   crearJuego();
@@ -45,11 +96,12 @@ function prepararFormulario(e){
 
 function crearJuego(){
   // Validar el formulario
-  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
+  console.log(plataforma.value)
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');
-  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, desarrollador.value, anio.value, plataforma.value, sistemaOperativo.value, procesadorAmd.value, procesadorIntel.value, memoria.value, tGraficaAmd.value, tGraficaNvidia.value);
   console.log(nuevoJuego);
   // Guardar juego en el array
   listaJuegos.push(nuevoJuego);
@@ -64,8 +116,14 @@ function crearJuego(){
     'Presiona ok para continuar',
     'success'
   )
-  //dibuja la fila
-  crearFila(nuevoJuego, listaJuegos.length);
+  if (listaJuegos.length > 1) {
+    crearFila(nuevoJuego, listaJuegos.length)
+  } else {
+    let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
+    bodyTablaJuegos.innerHTML = ""
+    crearFila(nuevoJuego, listaJuegos.length)
+  }
+
   } else {
     //Falla la validación
     mostrarAlert(true, resumenErrores)

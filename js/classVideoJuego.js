@@ -5,10 +5,15 @@ export default class VideoJuego {
   #imagen;
   #categoria;
   #precio;
-  #requisitos;
   #desarrollador;
   #anio;
-  #resenias;
+  #plataforma;
+  #sistemaOperativo;
+  #procesadorAmd;
+  #procesadorIntel;
+  #memoria;
+  #tGraficaAmd;
+  #tGraficaNvidia;
 
   constructor(
     nombre,
@@ -16,10 +21,15 @@ export default class VideoJuego {
     imagen,
     categoria,
     precio,
-    requisitos,
     desarrollador,
     anio,
-    resenias
+    plataforma,
+    sistemaOperativo,
+    procesadorAmd,
+    procesadorIntel,
+    memoria,
+    tGraficaAmd,
+    tGraficaNvidia
   ) {
     this.#codigo = uuidv4();
     this.#nombre = nombre;
@@ -27,10 +37,15 @@ export default class VideoJuego {
     this.#imagen = imagen;
     this.#categoria = categoria;
     this.#precio = precio;
-    this.#requisitos = requisitos;
     this.#desarrollador = desarrollador;
     this.#anio = anio;
-    this.#resenias = resenias;
+    this.#plataforma = plataforma;
+    this.#sistemaOperativo = sistemaOperativo;
+    this.#procesadorAmd = procesadorAmd;
+    this.#procesadorIntel = procesadorIntel;
+    this.#memoria = memoria;
+    this.#tGraficaAmd = tGraficaAmd;
+    this.#tGraficaNvidia = tGraficaNvidia;
   }
 
   // getters
@@ -58,20 +73,40 @@ export default class VideoJuego {
     return this.#precio;
   }
 
-  get requisitos() {
-    return this.#requisitos;
-  }
-
   get desarrollador() {
     return this.#desarrollador;
   }
 
-  get (anio) {
+  get anio() {
     return this.#anio;
   }
 
-  get resenias() {
-    return this.#resenias;
+  get plataforma() {
+    return this.#plataforma;
+  }
+
+  get sistemaOperativo() {
+    return this.#sistemaOperativo;
+  }
+
+  get procesadorAmd() {
+    return this.#procesadorAmd;
+  }
+
+  get procesadorIntel() {
+    return this.#procesadorIntel;
+  }
+
+  get memoria() {
+    return this.#memoria;
+  }
+
+  get tGraficaAmd() {
+    return this.#tGraficaAmd;
+  }
+
+  get tGraficaNvidia() {
+    return this.#tGraficaNvidia;
   }
 
   // setters
@@ -99,10 +134,6 @@ export default class VideoJuego {
     this.#precio = precio;
   }
 
-  set requisitos(requisitos) {
-    this.#requisitos = requisitos;
-  }
-
   set desarrollador(desarrollador) {
     this.#desarrollador = desarrollador;
   }
@@ -111,8 +142,32 @@ export default class VideoJuego {
     this.#anio = anio;
   }
 
-  set resenias(resenias) {
-    this.#resenias = resenias;
+  set plataforma(plataforma) {
+    this.#plataforma = plataforma;
+  }
+
+  set sistemaOperativo(sistemaOperativo) {
+    this.#sistemaOperativo = sistemaOperativo;
+  }
+
+  set procesadorAmd(procesadorAmd) {
+    this.#procesadorAmd = procesadorAmd;
+  }
+
+  set procesadorIntel(procesadorIntel) {
+    this.#procesadorIntel = procesadorIntel;
+  }
+
+  set memoria(memoria) {
+    this.#memoria = memoria;
+  }
+
+  set tGraficaAmd(tGraficaAmd) {
+    this.#tGraficaAmd = tGraficaAmd;
+  }
+
+  set tGraficaNvidia(tGraficaNvidia) {
+    this.#tGraficaNvidia = tGraficaNvidia;
   }
 
   toJSON() {
@@ -123,10 +178,15 @@ export default class VideoJuego {
       imagen: this.imagen,
       categoria: this.categoria,
       precio: this.precio,
-      requisitos: this.requisitos,
       desarrollador: this.desarrollador,
       anio: this.anio,
-      resenias: this.resenias
+      plataforma: this.plataforma,
+      sistemaOperativo: this.sistemaOperativo,
+      procesadorAmd: this.procesadorAmd,
+      procesadorIntel: this.procesadorIntel,
+      memoria: this.memoria,
+      tGraficaAmd: this.tGraficaAmd,
+      tGraficaNvidia: this.tGraficaNvidia
     };
   }
 }
