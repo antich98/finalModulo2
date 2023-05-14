@@ -43,16 +43,16 @@ cargaInicial()
 // Bien se carga la página se ejecuta esta función, si hay juegos en LS los renderizo
 function cargaInicial() {
   if (listaJuegos.length > 0) {
-    listaJuegos.map(( juego => crearFila(juego) ))
+    listaJuegos.map(( (juego, indice) => crearFila(juego, indice + 1) ))
   } else {
     // mostrar un mensaje que diga que no hay juegos aun
   }
 }
 
-function crearFila(juego) {
+function crearFila(juego, indiceCorregido) {
   let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
   bodyTablaJuegos.innerHTML += `<tr>
-  <th scope="row">2</th>
+  <th scope="row">${indiceCorregido}</th>
   <td>${juego.nombre}</td>
   <td class="text-truncate ancho pe-5">
     ${juego.descripcion}
