@@ -134,6 +134,8 @@ window.borrarJuego = (codigo) => {
       localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
       let tablaJuego = document.querySelector("tbody");
       tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
+      window.location.reload();
+      Swal.fire("Juego eliminada", "El juego seleccionado fue eliminado correctamente", "success");
     }
   });
 };
