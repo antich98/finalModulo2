@@ -34,7 +34,7 @@ function cargaInicial() {
             <button
               class="btn btn-morado"
               type="button"
-              href="./pages/detalleJuego.html"
+              onclick="enviarDetalleDelJuego('${juego.codigo}')"
             >
               Ver más
             </button>
@@ -47,3 +47,12 @@ function cargaInicial() {
       </article>
     </aside>`
   }
+
+// Defino la funcion del evento onclick del boton ver mas como parte del opbjeto global
+window.enviarDetalleDelJuego = (codigo) => {
+  console.log(codigo)
+  // redirigir
+  window.location.href = window.location.origin + "/pages/detalleJuego.html?codigo=" + codigo
+}
+
+// /pages/detalleJuego.html

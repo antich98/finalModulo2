@@ -72,42 +72,42 @@ main {
 }
 .front {
   transform: translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img1.png);
+  /* background-image: url(../img/juego1_img1.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .back {
   transform: rotateY(180deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img2.png);
+  /* background-image: url(../img/juego1_img2.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .left {
   transform: rotateY(-90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img3.png);
+  /* background-image: url(../img/juego1_img3.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .right {
   transform: rotateY(90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img4.png);
+  /* background-image: url(../img/juego1_img4.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .top {
   transform: rotateX(90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img5.png);
+  /* background-image: url(../img/juego1_img5.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .bottom {
   transform: rotateX(-90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img6.png);
+  /* background-image: url(../img/juego1_img6.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -120,23 +120,6 @@ main {
   perspective: 600px;
   display: inline-block;
 }
-
-/*controles*/
-/* #radio-back:checked ~ .scene .cube{
-    transform: rotateY(180deg);
-}
-#radio-left:checked ~ .scene .cube {
-    transform: rotateY(90deg); 
-} 
-#radio-right:checked ~ .scene .cube {
-    transform: rotateY(-90deg); 
-}
-#radio-top:checked ~ .scene .cube {
-    transform: rotateX(-90deg); 
-}  
-#radio-bottom:checked ~ .scene .cube {
-    transform: rotateX(90deg); 
-}    */
 
 .cube-button {
   padding: 0;
