@@ -12,7 +12,7 @@ precio = document.getElementById("precio"),
 requisitos = document.getElementById("requisitos"),
 desarrollador = document.getElementById("desarrollador"),
 anio = document.getElementById("anio"),
-resenias = document.getElementById("resenias");
+plataforma = document.getElementById("plataforma");
 
 let listaJuegos = localStorage.getItem("listaJuegos");
 
@@ -29,7 +29,7 @@ if(!listaJuegos){
     videoJuego.requisitos, 
     videoJuego.desarrollador, 
     videoJuego.anio, 
-    videoJuego.resenias)
+    videoJuego.plataforma)
   );
 }
 console.log(listaJuegos);
@@ -44,11 +44,11 @@ function prepararFormulario(e){
 
 function crearJuego(){
   // Validar el formulario
-  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let resumenErrores = sumarioValidaciones(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, plataforma.value);
   if(resumenErrores.length === 0){
     // Creo el juego
     mostrarAlert(false, '');
-  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, resenias.value);
+  let nuevoJuego = new VideoJuego(nombre.value, descripcion.value, imagen.value, categoria.value, precio.value, requisitos.value, desarrollador.value, anio.value, plataforma.value);
   console.log(nuevoJuego);
   // Guardar juego en el array
   listaJuegos.push(nuevoJuego);

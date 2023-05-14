@@ -20,8 +20,8 @@ function validacionPrecio(precio){
         return false;
     }
 }
-function validacionResenia(resenia){
-    if(resenia >= 1 && resenia <= 10){
+function validacionPlataforma(plataforma){
+    if(plataforma >= 3 && plataforma <= 200){
         return true;
     }else{
         return false;
@@ -36,7 +36,7 @@ function validarImagenes(texto){
      }
  }
 
-export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, requisitos, desarrollador, anio, resenias){
+export function sumarioValidaciones(nombre, descripcion, imagen, categoria, precio, requisitos, desarrollador, anio, plataforma){
     let resumen = '';
     if(!validarCantidadCaracteres(nombre,3,70)){
         resumen = 'El titulo debe tener entre 3 y 70 caracteres <br>'
@@ -59,8 +59,8 @@ export function sumarioValidaciones(nombre, descripcion, imagen, categoria, prec
     if(!validarCantidadCaracteres(categoria,3,300)){
         resumen += 'La categoría debe tener entre 3 y 300 caracteres <br>'
     }
-    if(!validacionResenia(resenias)){
-        resumen += 'La resenia debe tener una puntuación entre 1 y 10. <br>'
+    if(!validacionPlataforma(plataforma)){
+        resumen += 'Plataforma debe tener entre 3 y 200 caracteres <br>'
     }
     if(!validarImagenes(imagen)){
         resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
