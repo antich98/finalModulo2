@@ -119,9 +119,23 @@ function limpiarFormulario(){
 // juego
 window.borrarJuego = (codigo) => {
   console.log('aqui quiero borar')
-  let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
-  listaJuegos.splice(posicionVideoJuego, 1);
-  localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
-  let tablaJuego = document.querySelector("tbody");
-      tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
+  Swal.fire({
+    title: "¿Esta seguro de eliminar la pelicula?",
+    text: "No puedes revertir posteriormente este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      let posicionVideoJuego = listaJuegos.findIndex((videoJuego)=> videoJuego.codigo === codigo);
+      listaJuegos.splice(posicionVideoJuego, 1);
+      localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
+      let tablaJuego = document.querySelector("tbody");
+          tablaJuego.removeChild(tablaJuego.children[posicionVideoJuego]);
+    }
+  });
 };
