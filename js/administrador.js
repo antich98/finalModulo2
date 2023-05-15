@@ -26,6 +26,7 @@ tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
 let modalJuego = new bootstrap.Modal(document.getElementById("Modal"));
 let verificarCrearJuego = true; // verificarCrearJuego = true entonces se crea el juego, cuando sea false se edita
+const btnAgregarJuego = document.getElementById("btnAgregarJuego");
 
 
 let listaJuegos = localStorage.getItem("listaJuegos");
@@ -60,7 +61,7 @@ console.log(listaJuegos);
 
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
-
+btnAgregarJuego.addEventListener("click", mostrarModalJuego);
 
 // Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
 cargaInicial()
@@ -241,4 +242,28 @@ function editarJuego(){
   listaJuegos[posicionJuego].tGraficaNvidia = tGraficaNvidia.value;
   // Actualizar el local storage
   localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
+  // Actualizar los datos de la tabla
+  let tablaJuego = document.querySelector("tbody");
+  tablaJuego.children[posicionJuego].children[1].innerHTML = nombre.value;
+  tablaJuego.children[posicionJuego].children[2].innerHTML = descripcion.value;
+  tablaJuego.children[posicionJuego].children[3].innerHTML = precio.value;
+  tablaJuego.children[posicionJuego].children[4].innerHTML = categoria.value;
+    // Mostrar cartel
+    Swal.fire(
+      'Juego editado',
+      'El juego fue editado correctamente',
+      'success'
+    )
+  // Limpiar el formulario
+  limpiarFormulario();
+  // Cerrar ventana modal
+  modalJuego.hide(); 
+}
+function mostrarModalJuego(){
+  // Limpiar el formulario
+  limpiarFormulario();
+  // Mostrar ventana modal
+  modalJuego.show();
+  // Cambiar la variable booleana
+  verificarCrearJuego = true;
 }
