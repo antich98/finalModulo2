@@ -24,6 +24,11 @@ memoria = document.getElementById("memoria"),
 tGraficaAmd = document.getElementById("tGraficaAmd"),
 tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
+let modalJuego = new bootstrap.Modal(document.getElementById("Modal"));
+let verificarCrearJuego = true; // verificarCrearJuego = true entonces se crea el juego, cuando sea false se edita
+const btnAgregarJuego = document.getElementById("btnAgregarJuego");
+
+
 let listaJuegos = localStorage.getItem("listaJuegos");
 
 // Si listaJuegos está vacía
@@ -56,7 +61,7 @@ console.log(listaJuegos);
 
 // Manejadores de eventos
 formJuego.addEventListener("submit", prepararFormulario);
-
+btnAgregarJuego.addEventListener("click", mostrarModalJuego);
 
 // Invoco carga inicial para leer lo que ya hay en local storage y pintarlo en el navegador
 cargaInicial()
@@ -88,8 +93,7 @@ function crearFila(juego, indiceCorregido) {
       <button
         type="button"
         class="btn btn-warning mx-1"
-        data-bs-toggle="modal"
-        data-bs-target="#Modal"
+        onclick="prepararJuego('${juego.codigo}')"
       >
         <i class="bi bi-pencil-square"></i></button
       ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
@@ -101,7 +105,11 @@ function crearFila(juego, indiceCorregido) {
 
 function prepararFormulario(e){
   e.preventDefault();
+  if(verificarCrearJuego){
   crearJuego();
+}else{
+  editarJuego();
+}
 }
 
 function crearJuego(){
@@ -178,3 +186,84 @@ window.borrarJuego = (codigo) => {
     }
   });
 };
+window.prepararJuego = (codigoBuscado) => {
+  console.log(codigo, 'desde preparar juego');
+  // Mostrar la ventana modal con los datos de la película
+  modalJuego.show();
+  // Buscar el juego y cargarlo en el formulario
+  let juegoBuscado = listaJuegos.find((juego) => juego.codigo === codigoBuscado);
+  console.log(juegoBuscado);
+  codigo.value = juegoBuscado.codigo;
+  nombre.value = juegoBuscado.nombre;
+  descripcion.value = juegoBuscado.descripcion;
+  imagenUno.value = juegoBuscado.imagenUno;
+  imagenDos.value = juegoBuscado.imagenDos;
+  imagenTres.value = juegoBuscado.imagenTres;
+  imagenCuatro.value = juegoBuscado.imagenCuatro;
+  imagenCinco.value = juegoBuscado.imagenCinco;
+  imagenSeis.value = juegoBuscado.imagenSeis;
+  categoria.value = juegoBuscado.categoria;
+  precio.value = juegoBuscado.precio;
+  desarrollador.value = juegoBuscado.desarrollador;
+  anio.value = juegoBuscado.anio;
+  plataforma.value = juegoBuscado.plataforma;
+  sistemaOperativo.value = juegoBuscado.sistemaOperativo;
+  procesadorAmd.value = juegoBuscado.procesadorAmd;
+  procesadorIntel.value = juegoBuscado.procesadorIntel;
+  memoria.value = juegoBuscado.memoria;
+  tGraficaAmd.value = juegoBuscado.tGraficaAmd;
+  tGraficaNvidia.value = juegoBuscado.tGraficaNvidia;
+  // Cambio la variable para editar el juego en el submit
+  verificarCrearJuego = false;
+}
+function editarJuego(){
+  console.log('Aquí tengo que editar el juego')
+  // Buscar la posición en el array de juegos, del juego que coincida con el código
+  let posicionJuego = listaJuegos.findIndex((juego) => juego.codigo === codigo.value);
+  console.log(posicionJuego);
+  listaJuegos[posicionJuego].nombre = nombre.value;
+  listaJuegos[posicionJuego].descripcion = descripcion.value;
+  listaJuegos[posicionJuego].imagenUno = imagenUno.value;
+  listaJuegos[posicionJuego].imagenDos = imagenDos.value;
+  listaJuegos[posicionJuego].imagenTres = imagenTres.value;
+  listaJuegos[posicionJuego].imagenCuatro = imagenCuatro.value;
+  listaJuegos[posicionJuego].imagenCinco = imagenCinco.value;
+  listaJuegos[posicionJuego].imagenSeis = imagenSeis.value;
+  listaJuegos[posicionJuego].categoria = categoria.value;
+  listaJuegos[posicionJuego].precio = precio.value;
+  listaJuegos[posicionJuego].desarrollador = desarrollador.value;
+  listaJuegos[posicionJuego].anio = anio.value;
+  listaJuegos[posicionJuego].plataforma = plataforma.value;
+  listaJuegos[posicionJuego].sistemaOperativo = sistemaOperativo.value;
+  listaJuegos[posicionJuego].procesadorAmd = procesadorAmd.value;
+  listaJuegos[posicionJuego].procesadorIntel = procesadorIntel.value;
+  listaJuegos[posicionJuego].memoria = memoria.value;
+  listaJuegos[posicionJuego].tGraficaAmd = tGraficaAmd.value;
+  listaJuegos[posicionJuego].tGraficaNvidia = tGraficaNvidia.value;
+  // Actualizar el local storage
+  localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
+  // Actualizar los datos de la tabla
+  let tablaJuego = document.querySelector("tbody");
+  tablaJuego.children[posicionJuego].children[1].innerHTML = nombre.value;
+  tablaJuego.children[posicionJuego].children[2].innerHTML = descripcion.value;
+  tablaJuego.children[posicionJuego].children[3].innerHTML = precio.value;
+  tablaJuego.children[posicionJuego].children[4].innerHTML = categoria.value;
+    // Mostrar cartel
+    Swal.fire(
+      'Juego editado',
+      'El juego fue editado correctamente',
+      'success'
+    )
+  // Limpiar el formulario
+  limpiarFormulario();
+  // Cerrar ventana modal
+  modalJuego.hide(); 
+}
+function mostrarModalJuego(){
+  // Limpiar el formulario
+  limpiarFormulario();
+  // Mostrar ventana modal
+  modalJuego.show();
+  // Cambiar la variable booleana
+  verificarCrearJuego = true;
+}
