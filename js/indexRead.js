@@ -9,7 +9,7 @@ function cargaInicial() {
       listaJuegos.map(( juego => crearCardDelJuego(juego) ))
     } else {
       // mostrar un mensaje que diga que no hay juegos aun
-      contenedorCards.innerHTML = `<aside>No hay juegos para mostrar.</aside>`
+      contenedorCards.innerHTML = `<aside class="text-light"><h5>No hay juegos para mostrar.</h5></aside>`
     }
   }
 
