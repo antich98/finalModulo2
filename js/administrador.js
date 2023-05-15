@@ -73,22 +73,22 @@ function cargaInicial() {
     listaJuegos.map(( (juego, indice) => crearFila(juego, indice + 1) ))
   } else {
     // mostrar un mensaje que diga que no hay juegos aun
-    bodyTablaJuegos.innerHTML = `<tr><td colspan="6">No hay juegos cargados aun.</td></tr>`
+    bodyTablaJuegos.innerHTML = `<tr><td colspan="6" class="text-light">No hay juegos cargados aun.</td></tr>`
   }
 }
 
 function crearFila(juego, indiceCorregido) {
     let bodyTablaJuegos = document.querySelector("#body-tabla-admin")
     bodyTablaJuegos.innerHTML += `<tr>
-    <th scope="row">${indiceCorregido}</th>
-    <td>${juego.nombre}</td>
-    <td class="text-truncate ancho pe-5">
+    <th scope="row" class="text-light">${indiceCorregido}</th>
+    <td class="text-light">${juego.nombre}</td>
+    <td class="text-truncate ancho pe-5 text-light">
       ${juego.descripcion}
     </td>
-    <td class="text-truncate ancho pe-5">
+    <td class="text-truncate ancho pe-5 text-light">
       ${juego.precio}
     </td>
-    <td>${juego.categoria}</td>
+    <td class="text-light">${juego.categoria}</td>
     <td>
       <button
         type="button"
