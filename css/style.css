@@ -43,6 +43,10 @@ main {
 .btn-morado:hover {
   background: #35083a;
 }
+
+.juegoNoEncontrado{
+  color: #bf01d3;
+}
 /* Paleta de colores: 
 #0f1214
 #00243d
