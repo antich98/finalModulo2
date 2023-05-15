@@ -27,7 +27,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="./index.html">RocketPower</a>
+              <a class="navbar-brand" href="./index.html"><img class="navbarLogo w-25" src="./img/rocketpower2-removebg-preview.png" alt="RocketPower"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -39,9 +39,14 @@
                   <li class="nav-item">
                     <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
                   </li>
+                  <li class="nav-item" >
+                    <a id="enlaceAdministrador" class="nav-link d-none" aria-current="page" href="pages/administrador.html">Administrador</a>
+                  </li>                  
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Iniciar sesión</a>
-                  </li>
+                    <a id="enlaceIniciarSesion" role="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+                      Iniciar Sesión
+                    </a>                    
+                </li>
                 </ul>
                 <form class="d-flex align-content-center" role="search">
                   <input class="form-control me-2" id="inputBuscador" type="text" placeholder="Buscar" aria-label="Search">
@@ -55,6 +60,30 @@
         <article class="row justify-content-center gy-3 my-3" id="crearCard">
         </article>
       </section>
+        <!-- Modal -->
+  <div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="modalIniciarSesionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalIniciarSesionLabel">Iniciar sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label for="inputEmail4" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="inputEmail4" minlength="6" maxlength="50" required>
+                </div>
+                <div>
+                    <label for="inputPassword4" class="form-label">Contraeña</label>
+                    <input type="password" class="form-control" id="inputPassword4" minlength="8" maxlength="50" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="botonIniciarSesion">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <footer class="bg-dark text-secondary py-4" >
         <p class="text-light text-center">&copy; Todos los derechos reservados</p>
@@ -64,6 +93,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/helperIniciarSesion.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/indexRead.js" type="module"></script>

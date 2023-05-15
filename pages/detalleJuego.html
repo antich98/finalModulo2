@@ -30,7 +30,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">RocketPower</a>
+          <a class="navbar-brand" href="../index.html"><img class="navbarLogo w-25" src="./img/rocketpower2-removebg-preview.png" alt="RocketPower"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -55,11 +55,14 @@
               <li class="nav-item">
                 <a class="nav-link" href="../pages/nosotros.html">Nosotros</a>
               </li>
+              <li class="nav-item" >
+                <a id="enlaceAdministrador" class="nav-link d-none" aria-current="page" href="../pages/administrador.html">Administrador</a>
+              </li>              
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#"
-                  >Iniciar sesión</a
-                >
-              </li>
+                <a id="enlaceIniciarSesion" role="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+                  Iniciar Sesión
+                </a>     
+            </li>
             </ul>
           </div>
         </div>
@@ -75,6 +78,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/helperIniciarSesion.js"></script>
     <script src="../js/readDetalleJuego.js"></script>
     <script src="../js/detalleJuego.js"></script>
   </body>
