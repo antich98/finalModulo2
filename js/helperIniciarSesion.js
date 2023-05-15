@@ -4,13 +4,12 @@
 //^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$
 
 // Espera a que el documento HTML se cargue completamente antes de ejecutar el código
-// JS
 window.addEventListener("load", function () {
   const botonIniciarSesion = document.getElementById("botonIniciarSesion");
   const enlaceIniciarSesion = document.getElementById("enlaceIniciarSesion");
   const modalIniciarSesion = document.getElementById("modalIniciarSesion");
 
-  // Obtén la información de sesión guardada en el sessionStorage
+  // Obtiene la información de sesión guardada en el sessionStorage
   const sesionIniciada = sessionStorage.getItem("sesionIniciada");
 
   // Si la sesión está iniciada, muestra el enlace de Administrador en el navbar
@@ -23,7 +22,7 @@ window.addEventListener("load", function () {
   botonIniciarSesion.addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-    // Obtén los valores de correo electrónico y contraseña ingresados por el usuario
+    // Obtener los valores de correo electrónico y contraseña ingresados por el usuario
     const correoElectronico = document.getElementById("inputEmail4").value;
     const contrasena = document.getElementById("inputPassword4").value;
 
@@ -32,7 +31,6 @@ window.addEventListener("load", function () {
       correoElectronico === "admin@admin.administrador.com" &&
       contrasena === "Administrador1."
     ) {
-      // Muestra una alerta de bienvenida
       alert("¡Bienvenido!");
 
       // Oculta el modal de iniciar sesión
@@ -49,14 +47,13 @@ window.addEventListener("load", function () {
       // Guarda la información de sesión en el sessionStorage
       sessionStorage.setItem("sesionIniciada", true);
     } else {
-      // Muestra un mensaje de error
       alert("Correo electrónico o contraseña incorrectos");
     }
   });
 
   // Asigna un evento 'click' al enlace de cerrar sesión
   enlaceIniciarSesion.addEventListener("click", function (event) {
-    event.preventDefault(); // Evita que el enlace se comporte como un enlace normal
+    event.preventDefault();
 
     // Si la sesión está iniciada, elimina la información de sesión del sessionStorage
     if (sessionStorage.getItem("sesionIniciada")) {
