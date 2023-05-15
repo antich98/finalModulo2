@@ -47,7 +47,7 @@
           Agregar:
           <button
             type="button"
-            class="btn btn-outline-primary mx-2"
+            class="btn-morado mx-2"
             data-bs-toggle="modal"
             data-bs-target="#Modal"
           >
@@ -260,7 +260,7 @@
                         aria-label="plataforma"
                         placeholder="Ej: Computadora"
                         id="plataforma"
-                        minlength="3"
+                        minlength="2"
                         maxlength="50"
                       />
                     </div>
@@ -272,7 +272,7 @@
                         aria-label="sistemaOperativo"
                         placeholder="Ej: Computadora"
                         id="sistemaOperativo"
-                        minlength="3"
+                        minlength="2"
                         maxlength="100"
                       />
                     </div>
@@ -299,19 +299,19 @@
                         placeholder="Ej: i5"
                         id="procesadorIntel"
                         minlength="3"
-                        maxlength="100"
+                        maxlength="50"
                       />
                     </div>
                     <div class="col-5">
                       <label for="memoria" class="form-label">Memoria *</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         aria-label="memoria"
                         placeholder="Memoria"
                         id="memoria"
-                        minlength="3"
-                        maxlength="100"
+                        min="1"
+                        max="100"
                       />
                     </div>
                     <div class="col-5">
@@ -341,7 +341,7 @@
                     </div>
                     <div class="alert alert-danger d-none" role="alert" id="alertMsjError">
                     </div>
-                      <button type="submit" class="btn btn-primary">
+                      <button type="submit" class="btn-morado">
                         Enviar
                       </button>
                   </div>

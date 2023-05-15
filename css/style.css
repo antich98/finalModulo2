@@ -37,11 +37,15 @@ main {
   transition: all 0.5s;
 }
 .btn-morado {
-  background: #00243d;
+  background-color: #bf01d3;
   color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 10px;
 }
 .btn-morado:hover {
-  background: #35083a;
+  background: #9c21aa;
+  color: white;
 }
 /* Paleta de colores: 
 #0f1214
