@@ -70,6 +70,7 @@ window.addEventListener("load", function () {
 
       // Muestra una alerta informando que la sesión se ha cerrado
       alert("La sesión se ha cerrado correctamente");
+      window.location.href = "../index.html";
     }
   });
 });
