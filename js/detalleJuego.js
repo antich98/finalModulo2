@@ -1,10 +1,8 @@
 let cube = document.getElementById("cube")
 
 let cubeBtn = document.getElementsByClassName("cube-button")
-console.log(cubeBtn)
 
 let arrayFromCubeBtn = [...cubeBtn]
-console.log(arrayFromCubeBtn)
 
 arrayFromCubeBtn.forEach( btn => {
     btn.addEventListener("click", storeBtnId)

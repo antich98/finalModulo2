@@ -10,6 +10,9 @@ body {
 main {
   flex-grow: 1;
 }
+.ancho{
+    max-width: 150px;
+}
 .card {
   position: relative;
   overflow: hidden;
@@ -34,12 +37,21 @@ main {
   transition: all 0.5s;
 }
 .btn-morado {
-  background: #00243d;
+  background-color: #bf01d3;
   color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 10px;
 }
 .btn-morado:hover {
-  background: #35083a;
+  background: #9c21aa;
+  color: white;
 }
+
+.juegoNoEncontrado{
+  color: #bf01d3;
+}
+
 /* Paleta de colores: 
 #0f1214
 #00243d
@@ -69,45 +81,27 @@ main {
 }
 .front {
   transform: translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .back {
   transform: rotateY(180deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .left {
   transform: rotateY(-90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .right {
   transform: rotateY(90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img4.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .top {
   transform: rotateX(90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img5.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .bottom {
   transform: rotateX(-90deg) translate3d(0, 0, var(--semi-side-length));
-  background-image: url(../img/juego1_img6.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 .scene {
   --side-length: 200px;
@@ -117,23 +111,6 @@ main {
   perspective: 600px;
   display: inline-block;
 }
-
-/*controles*/
-/* #radio-back:checked ~ .scene .cube{
-    transform: rotateY(180deg);
-}
-#radio-left:checked ~ .scene .cube {
-    transform: rotateY(90deg); 
-} 
-#radio-right:checked ~ .scene .cube {
-    transform: rotateY(-90deg); 
-}
-#radio-top:checked ~ .scene .cube {
-    transform: rotateX(-90deg); 
-}  
-#radio-bottom:checked ~ .scene .cube {
-    transform: rotateX(90deg); 
-}    */
 
 .cube-button {
   padding: 0;
@@ -184,6 +161,9 @@ main {
   width:300px;
   height:300px;
   border-radius:150px;
+}
+.displayNone{
+  display: none;
 }
 @media screen and (max-width: 576px) {
   .gif {

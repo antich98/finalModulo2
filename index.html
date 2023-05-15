@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,6 +48,9 @@
                     </a>                    
                 </li>
                 </ul>
+                <form class="d-flex align-content-center" role="search">
+                  <input class="form-control me-2" id="inputBuscador" type="text" placeholder="Buscar" aria-label="Search">
+                    <i class="bi bi-search m-auto text-primary fs-4"></i>
               </div>
             </div>
         </nav>
@@ -55,64 +58,6 @@
     <main>
       <section class="container">
         <article class="row justify-content-center gy-3 my-3" id="crearCard">
-          <aside class="col-md-5 col-lg-4">
-            <article class="card h-100">
-              <img src="./img/nfs.jpg" alt="nfs" class="card-img-top" />
-              <div
-                class="card-body text-white d-flex flex-column justify-content-center align-items-center"
-              >
-                <div class="text-center">
-                  <h5>Need For Speed Heat</h5>
-                  <ul class="list-unstyled">
-                    <li>
-                      Valoraciones: 10 <i class="bi bi-hand-thumbs-up-fill"></i>
-                    </li>
-                    <li></li>
-                  </ul>
-                  <button
-                    class="btn btn-morado"
-                    type="button"
-                    href="./pages/error404.html"
-                  >
-                    Ver más
-                  </button>
-                  <div class="mt-5 mt-md-4 mt-lg-5">
-                    <i class="bi bi-windows mx-1"></i
-                    ><i class="bi bi-apple mx-1"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </aside>
-          <aside class="col-md-5 col-lg-4">
-            <article class="card h-100">
-              <img src="./img/sims.jpg" alt="nfs" class="card-img-top" />
-              <div
-                class="card-body text-white d-flex flex-column justify-content-center align-items-center"
-              >
-                <div class="text-center">
-                  <h5>The Sims 4</h5>
-                  <ul class="list-unstyled">
-                    <li>
-                      Valoraciones: 2 <i class="bi bi-hand-thumbs-up-fill"></i>
-                    </li>
-                    <li></li>
-                  </ul>
-                  <button
-                    class="btn btn-morado"
-                    type="button"
-                    href="./pages/error404.html"
-                  >
-                    Ver más
-                  </button>
-                  <div class="mt-5 mt-md-4 mt-lg-5">
-                    <i class="bi bi-windows mx-1"></i
-                    ><i class="bi bi-apple mx-1"></i>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </aside>
         </article>
       </section>
         <!-- Modal -->
@@ -140,8 +85,8 @@
     </div>
 </div>
     </main>
-    <footer class="bg-dark text-secondary py-4">
-      <p class="text-light text-center">Todos los derechos reservados</p>
+    <footer class="bg-dark text-secondary py-4" >
+        <p class="text-light text-center">&copy; Todos los derechos reservados</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -150,5 +95,7 @@
     ></script>
     <script src="../js/helperIniciarSesion.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/indexRead.js" type="module"></script>
   </body>
 </html>
