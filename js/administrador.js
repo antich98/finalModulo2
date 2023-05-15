@@ -24,6 +24,8 @@ memoria = document.getElementById("memoria"),
 tGraficaAmd = document.getElementById("tGraficaAmd"),
 tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
+let modalJuego = new bootstrap.Modal(document.getElementById("Modal"));
+
 let listaJuegos = localStorage.getItem("listaJuegos");
 
 // Si listaJuegos está vacía
@@ -88,8 +90,7 @@ function crearFila(juego, indiceCorregido) {
       <button
         type="button"
         class="btn btn-warning mx-1"
-        data-bs-toggle="modal"
-        data-bs-target="#Modal"
+        onclick="prepararJuego('${juego.codigo}')"
       >
         <i class="bi bi-pencil-square"></i></button
       ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
@@ -178,3 +179,31 @@ window.borrarJuego = (codigo) => {
     }
   });
 };
+window.prepararJuego = (codigoBuscado) => {
+  console.log(codigo, 'desde preparar juego');
+  // Mostrar la ventana modal con los datos de la película
+  modalJuego.show();
+  // Buscar el juego y cargarlo en el formulario
+  let juegoBuscado = listaJuegos.find((juego) => juego.codigo === codigoBuscado);
+  console.log(juegoBuscado);
+  codigo.value = juegoBuscado.codigo;
+  nombre.value = juegoBuscado.nombre;
+  descripcion.value = juegoBuscado.descripcion;
+  imagenUno.value = juegoBuscado.imagenUno;
+  imagenDos.value = juegoBuscado.imagenDos;
+  imagenTres.value = juegoBuscado.imagenTres;
+  imagenCuatro.value = juegoBuscado.imagenCuatro;
+  imagenCinco.value = juegoBuscado.imagenCinco;
+  imagenSeis.value = juegoBuscado.imagenSeis;
+  categoria.value = juegoBuscado.categoria;
+  precio.value = juegoBuscado.precio;
+  desarrollador.value = juegoBuscado.desarrollador;
+  anio.value = juegoBuscado.anio;
+  plataforma.value = juegoBuscado.plataforma;
+  sistemaOperativo.value = juegoBuscado.sistemaOperativo;
+  procesadorAmd.value = juegoBuscado.procesadorAmd;
+  procesadorIntel.value = juegoBuscado.procesadorIntel;
+  memoria.value = juegoBuscado.memoria;
+  tGraficaAmd.value = juegoBuscado.tGraficaAmd;
+  tGraficaNvidia.value = juegoBuscado.tGraficaNvidia;
+}
