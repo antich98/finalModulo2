@@ -25,6 +25,8 @@ tGraficaAmd = document.getElementById("tGraficaAmd"),
 tGraficaNvidia = document.getElementById("tGraficaNvidia")
 
 let modalJuego = new bootstrap.Modal(document.getElementById("Modal"));
+let verificarCrearJuego = true; // verificarCrearJuego = true entonces se crea el juego, cuando sea false se edita
+
 
 let listaJuegos = localStorage.getItem("listaJuegos");
 
@@ -102,7 +104,11 @@ function crearFila(juego, indiceCorregido) {
 
 function prepararFormulario(e){
   e.preventDefault();
+  if(verificarCrearJuego){
   crearJuego();
+}else{
+  editarJuego();
+}
 }
 
 function crearJuego(){
@@ -206,4 +212,33 @@ window.prepararJuego = (codigoBuscado) => {
   memoria.value = juegoBuscado.memoria;
   tGraficaAmd.value = juegoBuscado.tGraficaAmd;
   tGraficaNvidia.value = juegoBuscado.tGraficaNvidia;
+  // Cambio la variable para editar el juego en el submit
+  verificarCrearJuego = false;
+}
+function editarJuego(){
+  console.log('Aquí tengo que editar el juego')
+  // Buscar la posición en el array de juegos, del juego que coincida con el código
+  let posicionJuego = listaJuegos.findIndex((juego) => juego.codigo === codigo.value);
+  console.log(posicionJuego);
+  listaJuegos[posicionJuego].nombre = nombre.value;
+  listaJuegos[posicionJuego].descripcion = descripcion.value;
+  listaJuegos[posicionJuego].imagenUno = imagenUno.value;
+  listaJuegos[posicionJuego].imagenDos = imagenDos.value;
+  listaJuegos[posicionJuego].imagenTres = imagenTres.value;
+  listaJuegos[posicionJuego].imagenCuatro = imagenCuatro.value;
+  listaJuegos[posicionJuego].imagenCinco = imagenCinco.value;
+  listaJuegos[posicionJuego].imagenSeis = imagenSeis.value;
+  listaJuegos[posicionJuego].categoria = categoria.value;
+  listaJuegos[posicionJuego].precio = precio.value;
+  listaJuegos[posicionJuego].desarrollador = desarrollador.value;
+  listaJuegos[posicionJuego].anio = anio.value;
+  listaJuegos[posicionJuego].plataforma = plataforma.value;
+  listaJuegos[posicionJuego].sistemaOperativo = sistemaOperativo.value;
+  listaJuegos[posicionJuego].procesadorAmd = procesadorAmd.value;
+  listaJuegos[posicionJuego].procesadorIntel = procesadorIntel.value;
+  listaJuegos[posicionJuego].memoria = memoria.value;
+  listaJuegos[posicionJuego].tGraficaAmd = tGraficaAmd.value;
+  listaJuegos[posicionJuego].tGraficaNvidia = tGraficaNvidia.value;
+  // Actualizar el local storage
+  localStorage.setItem("listaJuegos", JSON.stringify(listaJuegos));
 }
