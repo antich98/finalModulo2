@@ -10,7 +10,6 @@ arrayFromCubeBtn.forEach( btn => {
 
 function storeBtnId(e) {
     let id = e.target.id.split("-").reverse()[0]
-    console.log(id)
     cube.className = `cube rotate-${id}`
 }
 

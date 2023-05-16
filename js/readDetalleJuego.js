@@ -9,13 +9,13 @@ function cargarDetalleJuego(juego) {
     const contenedorDetalle = document.querySelector("#contenedor-detalle")
     contenedorDetalle.innerHTML = `<h1>${juego.nombre}</h1>
     <section class="d-grid gap-2 d-sm-block mb-3">
-      <a class="btn btn-primary" role="button" href="#about-the-game"
+      <a class="btn btn-morado" role="button" href="#about-the-game"
         >Acerca del Juego</a
       >
-      <a class="btn btn-primary" role="button" href="#game-description"
+      <a class="btn btn-morado" role="button" href="#game-description"
         >Descripción</a
       >
-      <a class="btn btn-primary" role="button" href="#system-requirements"
+      <a class="btn btn-morado" role="button" href="#system-requirements"
         >Requisitos del Sistema</a
       >
     </section>
@@ -76,7 +76,7 @@ function cargarDetalleJuego(juego) {
             <div class="cube" id="cube">
               <div class="cube-face front">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenUno}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -84,7 +84,7 @@ function cargarDetalleJuego(juego) {
               </div>
               <div class="cube-face back">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenDos}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -92,7 +92,7 @@ function cargarDetalleJuego(juego) {
               </div>
               <div class="cube-face left">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenTres}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -100,7 +100,7 @@ function cargarDetalleJuego(juego) {
               </div>
               <div class="cube-face right">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenCuatro}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -108,7 +108,7 @@ function cargarDetalleJuego(juego) {
               </div>
               <div class="cube-face top">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenCinco}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -116,7 +116,7 @@ function cargarDetalleJuego(juego) {
               </div>
               <div class="cube-face bottom">
               <img
-                class="w-100"
+                class="h-100 w-100"
                 src="${juego.imagenSeis}"
                 alt="imagen del juego"
                 id="btn-img-1"
@@ -131,8 +131,8 @@ function cargarDetalleJuego(juego) {
           <hr />
           <span class="align-self-start">${juego.precio},00 ARS</span>
             <div class="d-flex flex-column gap-2">
-            <button type="button" class="btn btn-primary w-100">Comprar</button>
-            <button type="button" class="btn btn-primary w-100">Agregar a favoritos</button>
+            <a href="../pages/error404.html"><button type="button" class="btn btn-morado w-100">Comprar</button></a>
+            <a href="../pages/error404.html"><button type="button" class="btn btn-morado w-100">Agregar a favoritos</button></a>
             </div>
         </aside>
       </article>
@@ -140,28 +140,28 @@ function cargarDetalleJuego(juego) {
     <section class="mb-3" id="about-the-game">
       <h2>Acerca del Juego</h2>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Desarrollador</div>
             <div class="col-12 col-sm-9 text-uppercase">${juego.desarrollador}</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Categorías</div>
             <div class="col-12 col-sm-9">
               <span class="badge text-bg-primary">${juego.categoria}</span>
             </div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Plataforma</div>
             <div class="col-12 col-sm-9">${juego.plataforma}</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Lenguajes</div>
             <div class="col-12 col-sm-9">
               <span class="badge text-bg-primary">Inglés</span>
@@ -169,8 +169,8 @@ function cargarDetalleJuego(juego) {
             </div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Año de Lanzamiento</div>
             <div class="col-12 col-sm-9">${juego.anio}</div>
           </div>
@@ -186,40 +186,40 @@ function cargarDetalleJuego(juego) {
     <section class="mb-3" id="system-requirements">
       <h2>Requerimientos mínimos para Windows</h2>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Sistema Operativo</div>
             <div class="col-12 col-sm-9">
               ${juego.sistemaOperativo}
             </div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Procesador AMD</div>
             <div class="col-12 col-sm-9">${juego.procesadorAmd}</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Procesador Intel</div>
             <div class="col-12 col-sm-9">${juego.procesadorIntel}</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Memoria</div>
             <div class="col-12 col-sm-9">${juego.memoria}GB RAM</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Tarjeta Gráfica AMD</div>
             <div class="col-12 col-sm-9">AMD ${juego.tGraficaAmd}</div>
           </div>
         </li>
-        <li class="list-group-item text-start text-sm-center">
-          <div class="row justify-content-md-center">
+        <li class="list-group-item text-start text-sm-center fondo">
+          <div class="row justify-content-md-center text-light">
             <div class="col-12 col-sm-3">Tarjeta Gráfica NVIDIA</div>
             <div class="col-12 col-sm-9">NVIDIA ${juego.tGraficaNvidia}</div>
           </div>
