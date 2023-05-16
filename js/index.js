@@ -10,7 +10,7 @@ function buscarPelicula(e){
     e.preventDefault();
     let aside = document.querySelectorAll('aside')
     aside.forEach((asideJuego, indice) => {
-        if(asideJuego.textContent.includes(inputBuscador.value)){
+        if(asideJuego.textContent.toLowerCase().includes(inputBuscador.value.toLowerCase())){
             noEncontrado.innerHTML = '';
             aside[indice].classList.remove('displayNone');
         }else if(crearCard.children[indice].classList[2] === 'displayNone'){
