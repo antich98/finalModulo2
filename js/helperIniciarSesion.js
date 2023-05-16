@@ -17,7 +17,6 @@ window.addEventListener("load", function () {
     document.getElementById("enlaceAdministrador").classList.remove("d-none");
     enlaceIniciarSesion.textContent = "Cerrar sesión";
   }
-
   // Asigna un evento 'click' al botón de iniciar sesión
   botonIniciarSesion.addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
@@ -31,7 +30,12 @@ window.addEventListener("load", function () {
       correoElectronico === "admin@admin.administrador.com" &&
       contrasena === "Administrador1."
     ) {
-      alert("¡Bienvenido!");
+      Swal.fire(
+        '¡Bienvenido!',
+        'Presiona Ok para continuar',
+        'success'
+      );
+      //alert("¡Bienvenido!");
 
       // Oculta el modal de iniciar sesión
       modalIniciarSesion.classList.remove("show");
@@ -64,9 +68,8 @@ window.addEventListener("load", function () {
 
       // Cambia el texto del enlace "Cerrar sesión" a "Iniciar sesión"
       enlaceIniciarSesion.textContent = "Iniciar sesión";
-
       // Muestra una alerta informando que la sesión se ha cerrado
-      alert("La sesión se ha cerrado correctamente");
+      alert("Sesión cerrada");
       window.location.href = "../index.html";
     }
   });

@@ -92,11 +92,11 @@ function crearFila(juego, indiceCorregido) {
     <td>
       <button
         type="button"
-        class="btn btn-warning mx-1"
+        class="btn btn-azul mx-1"
         onclick="prepararJuego('${juego.codigo}')"
       >
         <i class="bi bi-pencil-square"></i></button
-      ><button type="button" class="btn btn-danger mx-1" onclick="borrarJuego('${juego.codigo}')">
+      ><button type="button" class="btn btn-morado mx-1" onclick="borrarJuego('${juego.codigo}')">
         <i class="bi bi-x-square"></i>
       </button>
     </td>

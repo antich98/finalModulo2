@@ -28,7 +28,7 @@ if(numero >= min && numero <= max){
 }
 }
 function validarImagenes(texto){
-    const patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|gif)$/
+    const patron = /^(http|https):\/\/[^\s/$.?#].[^\s]*$/
      if(patron.test(texto)){
          return true;
      }else{

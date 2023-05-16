@@ -19,7 +19,7 @@ function cargaInicial() {
     let contenedorCards = document.querySelector("#crearCard")
       contenedorCards.innerHTML += `<aside class="col-md-5 col-lg-4">
       <article class="card h-100">
-        <img src=${juego.imagenUno} alt="nfs" class="card-img-top" />
+        <img src=${juego.imagenUno} alt="nfs" class="card-img-top h-100" />
         <div
           class="card-body text-white d-flex flex-column justify-content-center align-items-center"
         >
