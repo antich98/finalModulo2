@@ -5,53 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página para comprar videojuegos">
-    <meta name="author" content="Santiago Antich Llarrull, Ezequiel Monachesi, Yusid Alderete, Laura Susana Rota, Daniel Nicolás Pomo">
+    <meta name="author" content="Santiago Antich Llarrull, Ezequiel Monachesi, Laura Susana Rota, Daniel Nicolás Pomo">
     <meta name="keywords" content="Videojuegos, Gamers, Juegos">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>RocketPower</title>
 </head>
-<body>
+<body class="fondo">
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">Compra tus juegos</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Modo oscuro
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Claro</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Oscuro</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Iniciar sesión</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand w-auto text-center" href="../index.html"><img class="img-fluid w-50" src="../img/rocketpower2-removebg-preview.png" alt="RocketPower"></a>
+          <button class="navbar-toggler botonHamburguesa ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item" >
+                <a id="enlaceAdministrador" class="nav-link d-none text-light" aria-current="page" href="../pages/administrador.html">Administrador</a>
+              </li>                  
+              <li class="nav-item">
+                <a id="enlaceIniciarSesion" role="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+                  Iniciar Sesión
+                </a>     
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main>
+    <main style="margin-top: 180px;">
+      <section class="container">
+        <img class="gif position-absolute top-50 start-50 translate-middle" src="../img/04.04.gif" alt="Error 404">
+      </section>
+        <!-- Modal -->
+  <div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="modalIniciarSesionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalIniciarSesionLabel">Iniciar sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                  <label for="inputEmail4" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="inputEmail4" minlength="6" maxlength="50" required>
+              </div>
+              <div>
+                  <label for="inputPassword4" class="form-label">Contraeña</label>
+                  <input type="password" class="form-control" id="inputPassword4" minlength="8" maxlength="50" required>
+              </div>
+          </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="botonIniciarSesion">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <footer class="bg-dark text-secondary py-4" >
-        <p class="text-light text-center">&#169 Todos los derechos reservados</p>
+        <p class="text-light text-center">&copy; Todos los derechos reservados</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="../js/helperIniciarSesion.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>
